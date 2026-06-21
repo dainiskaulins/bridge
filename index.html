@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Bridža LIELAIS MENU  TESTS  </title>
+</head>
+<body>
+
+<h1>Bridža Cālis</h1>
+
+<button onclick="atbilde('Jā')">Jā</button>
+<button onclick="atbilde('Nē')">Nē</button>
+<button onclick="atbilde('Atcelt')">Atcelt</button>
+
+<p id="x">Nekas nav nospiests.</p>
+
+<script>
+function atbilde(teksts) {
+  document.getElementById('x').innerHTML = 'Nospiests: ' + teksts;
+}
+</script>
+
+</body>
+</html>
