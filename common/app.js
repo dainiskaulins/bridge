@@ -21,6 +21,7 @@ function rakstitProtokolu(teksts) {
 }
 
 function dzestIzdali() {
+  console.log("DZEST IZDALI");
   facts.hands = { N: [], E: [], S: [], W: [] };
   facts.bids = [];
   facts.plays = [];
@@ -33,6 +34,7 @@ function dzestIzdali() {
 }
 
 function generetIzdali() {
+  console.log("GENERET IZDALI");
   const mastis = ["S", "H", "D", "C"];
   const vertibas = ["A", "K", "Q", "J", "T", "9", "8", "7", "6", "5", "4", "3", "2"];
 
