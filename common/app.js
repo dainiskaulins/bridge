@@ -1,5 +1,6 @@
 // app.js
 
+/* dzēsttttttttttt
 const game = {
   hands: { N: [], E: [], S: [], W: [] },
   turn: {
@@ -11,6 +12,7 @@ const game = {
   plays: [],
   log: []
 };
+*/
 
 function rakstitProtokolu(teksts) {
   const nr = String(game.log.length + 1).padStart(3, "0");
@@ -19,13 +21,15 @@ function rakstitProtokolu(teksts) {
 }
 
 function dzestIzdali() {
-  game.hands = { N: [], E: [], S: [], W: [] };
-  game.bids = [];
-  game.plays = [];
-  game.turn.phase = "start";
+  facts.hands = { N: [], E: [], S: [], W: [] };
+  facts.bids = [];
+  facts.plays = [];
+  facts.result = null;
 
   pogasKrasa("BTN_DZEST_IZDALI", "poga-dzeltena");
   rakstitProtokolu("DZĒST IZDALI");
+
+  render();
 }
 
 function generetIzdali() {
