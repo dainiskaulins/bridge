@@ -9,13 +9,172 @@
 <h1>Bridža LIELAIS lielais MENU  TESTS Cālis</h1>
 
 <button onclick="location.href='tests1/'">TESTS 1</button>
+<!-- POGAS -->
+<div id="poguPanelis">
 
-<button onclick="location.href='calis/'">CĀLIS</button>
-<button onclick="location.href='lidojums/'">LIDOJUMS</button>
-<button onclick="location.href='varna/'">VĀRNA</button>
-<button onclick="location.href='zagata/'">ŽAGATA</button>
-<button onclick="location.href='zaurs/'">ZAURS</button>
-  
+  <button onclick="location.href='calis/'">
+    CĀLIS
+  </button>
+
+  <button
+    id="BTN_DZEST_IZDALI"
+    class="poga poga-zala"
+    title="Dzēš pašreizējo kāršu izdali un sāk tukšu stāvokli"
+    data-teksts="Dzēst izdali"
+    data-simbols="🗑"
+    data-debug="Sākuma poga: dzēš game.hands"
+    onclick="dzestIzdali()">
+    🗑 Dzēst izdali
+  </button>
+
+  <button
+    id="BTN_GENERET_IZDALI"
+    class="poga poga-zala"
+    title="Ģenerē jaunu nejaušu 52 kāršu izdali"
+    data-teksts="Ģenerēt izdali"
+    data-simbols="🎲"
+    data-debug="Sākuma poga: ģenerē game.hands"
+    onclick="generetIzdali()">
+    🎲 Ģenerēt izdali
+  </button>
+
+</div>
+
+<!-- DATU / PROTOKOLA IZDRUKA -->
+<pre id="protokols"></pre>
+
+<style>
+  .poga {
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .poga-zala {
+    background-color: lightgreen;
+  }
+
+  .poga-dzeltena {
+    background-color: khaki;
+  }
+
+  .poga-sarkana {
+    background-color: lightcoral;
+  }
+
+  .poga-peleka {
+    background-color: lightgray;
+    cursor: not-allowed;
+  }
+
+  #protokols {
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px solid #999;
+    background: #f5f5f5;
+    white-space: pre-wrap;
+  }
+</style>
+
+<script>
+  const game = {
+    hands: {
+      N: [],
+      E: [],
+      S: [],
+      W: []
+    },
+    turn: {
+      dealer: "N",
+      current: "N",
+      phase: "start"
+    },
+    bids: [],
+    plays: [],
+    log: []
+  };
+
+  function rakstitProtokolu(teksts) {
+    const nr = String(game.log.length + 1).padStart(3, "0");
+    game.log.push(nr + " " + teksts);
+    render();
+  }
+
+  function dzestIzdali() {
+    game.hands = { N: [], E: [], S: [], W: [] };
+    game.bids = [];
+    game.plays = [];
+    game.turn.phase = "start";
+
+    pogasKrasa("BTN_DZEST_IZDALI", "poga-dzeltena");
+
+    rakstitProtokolu("DZĒST IZDALI");
+  }
+
+  function generetIzdali() {
+    const mastis = ["S", "H", "D", "C"];
+    const vertibas = ["A", "K", "Q", "J", "T", "9", "8", "7", "6", "5", "4", "3", "2"];
+
+    let deck = [];
+
+    for (let m of mastis) {
+      for (let v of vertibas) {
+        deck.push(v + m);
+      }
+    }
+
+    deck.sort(() => Math.random() - 0.5);
+
+    game.hands = {
+      N: deck.slice(0, 13),
+      E: deck.slice(13, 26),
+      S: deck.slice(26, 39),
+      W: deck.slice(39, 52)
+    };
+
+    game.turn.phase = "bidding";
+
+    pogasKrasa("BTN_GENERET_IZDALI", "poga-dzeltena");
+
+    rakstitProtokolu("ĢENERĒT IZDALI");
+  }
+
+  function pogasKrasa(id, klase) {
+    const poga = document.getElementById(id);
+
+    poga.classList.remove("poga-zala", "poga-dzeltena", "poga-sarkana", "poga-peleka");
+    poga.classList.add(klase);
+  }
+
+  function render() {
+    document.getElementById("protokols").textContent =
+      "HANDS\n" +
+      "N: " + game.hands.N.join(" ") + "\n" +
+      "E: " + game.hands.E.join(" ") + "\n" +
+      "S: " + game.hands.S.join(" ") + "\n" +
+      "W: " + game.hands.W.join(" ") + "\n\n" +
+
+      "TURN\n" +
+      "dealer: " + game.turn.dealer + "\n" +
+      "current: " + game.turn.current + "\n" +
+      "phase: " + game.turn.phase + "\n\n" +
+
+      "BIDS\n" +
+      game.bids.join("\n") + "\n\n" +
+
+      "PLAYS\n" +
+      game.plays.join("\n") + "\n\n" +
+
+      "LOG\n" +
+      game.log.join("\n");
+  }
+
+  render();
+</script>
+
 <p id="x">Nekas nav nospiests.</p>
 
 <script>
