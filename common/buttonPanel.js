@@ -29,11 +29,15 @@ const POGU_GRUPAS = [
   {
     nosaukums: "KĀRŠU DALĪŠANA",
     pogas: [
-      { id: "BTN_TUKSA_IZDALE", teksts: "Tukša izdale", funkcija: "tuksaIzdale" },
-      { id: "BTN_GENERET_IZDALI", teksts: "🎲 Ģenerēt", funkcija: "generetIzdali" },
+      { id: "BTN_TUKSA_IZDALE", teksts: "Tukša izdale", funkcija: "tuksaIzdale",
+             klase: "poga-zala"},
+      { id: "BTN_GENERET_IZDALI", teksts: "🎲 Ģenerēt", funkcija: "generetIzdali",
+             klase: "poga-zala"},
       { id: "BTN_LABOT_MANUALI", teksts: "Labot manuāli", funkcija: "labotManuali" },
-      { id: "BTN_EKSPORTET", teksts: "Eksportēt", funkcija: "eksportet" },
-      { id: "BTN_IMPORTET", teksts: "Importēt", funkcija: "importet" }
+      { id: "BTN_EKSPORTET", teksts: "Eksportēt", funkcija: "eksportet",
+            klase: "poga-sarkana" },
+      { id: "BTN_IMPORTET", teksts: "Importēt", funkcija: "importet", 
+            klase: "poga-sarkana" }
     ]
   },
 
@@ -162,8 +166,16 @@ function renderButtonPanel() {
       const btn = document.createElement("button");
 
       btn.id = poga.id;
-      btn.className = "poga poga-peleka";
+      
+      /*   klase ir krāsa - */
+      if (poga.klase) {
+                btn.className = "poga " + poga.klase;
+         } else {
+                btn.className = "poga poga-peleka";
+         }
+
       btn.textContent = poga.teksts;
+      
       btn.title = poga.funkcija
         ? "Izsauc: " + poga.funkcija + "()"
         : "Poga vēl nav pieslēgta";
