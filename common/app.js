@@ -11,8 +11,8 @@ function tuksaIzdale() {
   facts.plays = [];
   facts.result = null;
 
-  pogasKrasa("BTN_DZEST_IZDALI", "poga-dzeltena");
-  rakstitProtokolu("DZĒST IZDALI");
+  pogasKrasa("BTN_TUKSA_IZDALE", "poga-dzeltena");
+  rakstitProtokolu("Tukša izdale");
 
   render();
 }
