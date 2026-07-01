@@ -30,4 +30,5 @@ function render() {
     "FACTS\n" +
     JSON.stringify(facts, null, 2);
 } 
+
 console.log("common/render.js ielādēts");
