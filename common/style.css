@@ -1,4 +1,22 @@
-/* common/style.css */
+/* common/style.css
+=========================================================
+Kopējie stili jaunajai GALDS programmai.
+
+Uzdevums:
+- pogu izskats;
+- četru paneļu izskats;
+- vēlāk te būs arī bridža galda noformējums.
+
+2026-07-01
+=========================================================
+*/
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 10px;
+}
+
+
 /* Kopējie stili bridža projektam */
 .poga {
   border: 2px solid #333;
@@ -16,11 +34,22 @@
   background-color: lightgray;
   cursor: not-allowed;
 }
+/* ---------- Paneļi ---------- */
 
-#protokols {
-  margin-top: 15px;
+#titlePanel,
+#buttonPanel,
+#tablePanel,
+#logPanel {
+  margin-top: 10px;
   padding: 10px;
   border: 1px solid #999;
+}
+
+#tablePanel {
+  min-height: 250px;
+}
+
+#logPanel {
   background: #f5f5f5;
   white-space: pre-wrap;
 }
