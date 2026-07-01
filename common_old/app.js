@@ -58,4 +58,4 @@ function render() {
 
 render();
 
-console.log("common/app.js ielādēts");
+console.log("common_old/app.js ielādēts");
