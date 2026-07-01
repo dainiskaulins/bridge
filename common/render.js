@@ -1,7 +1,12 @@
 // common/render.js
+// centrālais pārzīmētājs
 
-function render() {
-    // pagaidām neko nedara
+function renderAll() {
+  renderTitlePanel();
+  renderButtonPanel();
+  renderTablePanel();
+  renderLogPanel();
+}
 }
 
-console.log("render.js ielādēts");
+console.log("common/render.js ielādēts");
