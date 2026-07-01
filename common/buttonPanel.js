@@ -1,5 +1,6 @@
 /*
 common/buttonPanel.js
+negatava versija 01-JUL-2026 
 
 Šis fails zīmē kopējo pogu paneli Bridža projektam.
 
@@ -193,4 +194,4 @@ function renderButtonPanel() {
   rakstitProtokolu("buttonPanel.js: pogu panelis uzzīmēts.");
 }
 
-console.log("buttonPanel.js ielādēts");
+console.log("common/buttonPanel.js ielādēts");
