@@ -50,8 +50,8 @@ function generetIzdali() {
   render();
 }
 
-function render() {
-  document.getElementById("protokols").textContent =
+function renderLogPanel() {
+  document.getElementById("logPanel").textContent =
     "FACTS\n" +
     JSON.stringify(facts, null, 2);
 }
