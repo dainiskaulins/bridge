@@ -35,7 +35,21 @@ function renderTablePanel() {
   const panelis = document.getElementById("tablePanel");
   if (!panelis) return;
 
-  panelis.innerHTML = "<h3>Šeit būs bridža galds</h3>";
+  panelis.innerHTML = `
+    <div class="bridge-table">
+      <div></div>
+      <div class="seat">N</div>
+      <div></div>
+
+      <div class="seat">W</div>
+      <div class="trick">stiķis</div>
+      <div class="seat">E</div>
+
+      <div></div>
+      <div class="seat">S</div>
+      <div></div>
+    </div>
+  `;
 }
 
 console.log("common/render.js ielādēts");
