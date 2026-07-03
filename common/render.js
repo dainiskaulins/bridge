@@ -36,7 +36,7 @@ function render() {
     JSON.stringify(facts, null, 2);
 } 
 
-// -----
+//=========================================================
 function renderButtonPanel(buttonSet) {
   const panelis = document.getElementById("buttonPanel");
   if (!panelis) return;
@@ -64,12 +64,15 @@ function renderButtonPanel(buttonSet) {
     
     if (poga.rinda === 1)
         rinda1.appendChild(btn);
+        console.log("rinda1 atrasta");
 
     if (poga.rinda === 2)
         rinda2.appendChild(btn);
+        console.log("rinda2 atrasta");
 
     if (poga.rinda === 3)
         rinda3.appendChild(btn);
+        console.log("rinda3 atrasta");
    
   }
     panelis.appendChild(rinda1);
@@ -77,28 +80,7 @@ function renderButtonPanel(buttonSet) {
     panelis.appendChild(rinda2);
 }
 
-/* -----
-function renderTablePanel() {
-  const panelis = document.getElementById("tablePanel");
-  if (!panelis) return;
-
-  panelis.innerHTML = `
-    <div class="bridge-table">
-      <div></div>
-      <div class="seat">N</div>
-      <div></div>
-
-      <div class="seat">W</div>
-      <div class="trick">stiķis</div>
-      <div class="seat">E</div>
-
-      <div></div>
-      <div class="seat">S</div>
-      <div></div>
-    </div>
-  `;
-}
------   */
+//=========================================================
 function renderNorthPanel() {
   return `<div class="seat">N<br>${formatHand(facts.hands.N)}</div>`;
 }
