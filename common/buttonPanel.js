@@ -122,8 +122,8 @@ const BUTTONS_PLAY = {
 const BUTTONS_FINISH = {
   nosaukums: "FINIŠS",
   pogas: [
-    { id:"BTN_RESULT", teksts:"Rezultāts", funkcija:"", klase:"poga-peleka" }
-    { id:"BTN_REVIEW", teksts:"Review", funkcija:"", klase:"poga-peleka" }
+    { id:"BTN_RESULT", teksts:"Rezultāts", funkcija:"", klase:"poga-peleka" },
+    { id:"BTN_REVIEW", teksts:"Review", funkcija:"", klase:"poga-peleka" },
     { id:"BTN_MENU_FINISH", teksts:"IZVĒLNE", funkcija:"showTitle", klase:"poga-dzeltena" }
   ]
 };
