@@ -90,7 +90,46 @@ const BUTTONS_BIDDING = {
 
   ]
 };
+//=========================================
+const BUTTONS_PLAY = {
+  nosaukums: "IZSPĒLE",
 
+  pogas: [
+    { id:"BTN_PLAY_C", teksts:"♣", funkcija:"", klase:"poga-zala", rinda:1 },
+    { id:"BTN_PLAY_D", teksts:"♦", funkcija:"", klase:"poga-zala", rinda:1 },
+    { id:"BTN_PLAY_H", teksts:"♥", funkcija:"", klase:"poga-zala", rinda:1 },
+    { id:"BTN_PLAY_S", teksts:"♠", funkcija:"", klase:"poga-zala", rinda:1 },
+       
+    { id:"BTN_PLAY_A", teksts:"A", funkcija:"", klase:"poga-zala", rinda:2 },
+    { id:"BTN_PLAY_K", teksts:"K", funkcija:"", klase:"poga-zala", rinda:2 },
+    { id:"BTN_PLAY_Q", teksts:"Q", funkcija:"", klase:"poga-zala", rinda:2 },
+    { id:"BTN_PLAY_J", teksts:"J", funkcija:"", klase:"poga-zala", rinda:2 },
+    { id:"BTN_PLAY_T", teksts:"T", funkcija:"", klase:"poga-zala", rinda:2 },
+    { id:"BTN_PLAY_9", teksts:"9", funkcija:"", klase:"poga-zala", rinda:2 },
+    { id:"BTN_PLAY_8", teksts:"8", funkcija:"", klase:"poga-zala", rinda:2 },
+    { id:"BTN_PLAY_7", teksts:"7", funkcija:"", klase:"poga-zala", rinda:2 },
+    { id:"BTN_PLAY_6", teksts:"6", funkcija:"", klase:"poga-zala", rinda:2 },
+    { id:"BTN_PLAY_5", teksts:"5", funkcija:"", klase:"poga-zala", rinda:2 },
+    { id:"BTN_PLAY_4", teksts:"4", funkcija:"", klase:"poga-zala", rinda:2 },
+    { id:"BTN_PLAY_3", teksts:"3", funkcija:"", klase:"poga-zala", rinda:2 },
+    { id:"BTN_PLAY_2", teksts:"2", funkcija:"", klase:"poga-zala", rinda:2 },
+   
+    { id:"BTN_PLAY_PASS", teksts:"PASS", funkcija:"", klase:"poga-zala", rinda:3 },
+    { id:"BTN_PLAY_X", teksts:"X", funkcija:"", klase:"poga-zala", rinda:3 },
+    { id:"BTN_PLAY_XX", teksts:"XX", funkcija:"", klase:"poga-zala" , rinda:3 },
+
+    { id:"BTN_PLAY", teksts:"IZSPĒLE", funkcija:"", klase:"poga-zala", rinda:3 },
+    { id:"BTN_PLAY_MENU", teksts:"IZVĒLNE", funkcija:"showTitle", klase:"poga-dzeltena", rinda:3 }
+   ]
+};
+
+const BUTTONS_FINISH = {
+  nosaukums: "FINIŠS",
+  pogas: [
+    { id:"BTN_MENU_FINISH", teksts:"IZVĒLNE", funkcija:"showTitle", klase:"poga-dzeltena" }
+  ]
+};
+//=========================================
 function izsauktPogasFunkciju(poga) {
   const fn = window[poga.funkcija];
 
