@@ -22,7 +22,11 @@ function renderTitlePanel() {
   panelis.innerHTML = `
     <h2>Rubber Bridge</h2>
 
-    <button class="poga poga-peleka">EXIT</button>
+  // ----- iziet uz iepriekšējo menu vie ārā ----- 
+    <button class="poga poga-peleka"
+        onclick="location.href='../index.html'">
+    EXIT
+    </button>
     <button class="poga poga-peleka">HELP</button>
     <button class="poga poga-peleka">Import</button>
     <button class="poga poga-peleka">Export</button>
