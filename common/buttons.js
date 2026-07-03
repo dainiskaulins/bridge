@@ -1,4 +1,8 @@
 // common/buttons.js
+//
+// Palīgfunkcijas darbam ar pogām.
+// Maina pogu krāsas, stāvokļus un izskatu.
+// Šeit nav bridža noteikumu — tikai pogu tehnika.
 
 function pogasKrasa(id, klase) {
   const poga = document.getElementById(id);
