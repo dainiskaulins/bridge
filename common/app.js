@@ -62,7 +62,22 @@ function jaunaSpele() {
     generetIzdali();
     renderAll();
 }
+// ----- zīmē pogu variantus -----
+function showTitle() {
+    renderButtonPanel(BUTTONS_TITLE);
+}
 
+function showBidding() {
+    renderButtonPanel(BUTTONS_BIDDING);
+}
+
+function showPlay() {
+    renderButtonPanel(BUTTONS_PLAY);
+}
+
+function showFinish() {
+    renderButtonPanel(BUTTONS_FINISH);
+}
 // gribam uzreiz jaunu spēli
 jaunaSpele();
 
