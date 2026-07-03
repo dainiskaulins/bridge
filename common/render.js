@@ -23,7 +23,7 @@ function renderTitlePanel() {
     <h2>Rubber Bridge</h2>
 
   // ----- iziet uz iepriekšējo menu vie ārā ----- 
-    <button class="poga poga-peleka"
+    <button class="poga poga-zala"
         onclick="location.href='../index.html'">
     EXIT
     </button>
