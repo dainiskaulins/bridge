@@ -1,20 +1,19 @@
 // common/render.js
+// 
+// Ekrāna pārzīmēšanas funkcijas.
+// Rāda pogas, galdu, spēles informāciju un FACTS apakšējā logā.
+// Šis fails neko nemaina spēles datos.
 //=========================================================
 // Ekrāna pārzīmēšana.
 //
-// Uzdevums:
-// - zīmē ekrāna paneļus;
-// - katrs panelis tiek zīmēts ar savu funkciju.
+// Uzdevums: - zīmē ekrāna paneļus.
+// Katrs panelis tiek zīmēts ar savu funkciju.
 //
-//2026-07-01
-//=========================================================
-
-//function renderAll() {
-//  renderTitlePanel();
-//  renderButtonPanel();
-//  renderTablePanel();
-//  renderLogPanel();
-//}
+//  titlePanel
+//  buttonPanel
+//  tablePanel
+//  logPanel
+//=======================================================
   
 function renderTitlePanel() {
   const panelis = document.getElementById("titlePanel");
