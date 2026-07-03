@@ -56,6 +56,9 @@ function generetIzdali() {
   facts.plays = [];
   facts.result = null;
   
+  //==========
+  facts.status = "BIDDING"
+  
   rakstitProtokolu("IZDALE ir ģenerēta");
 }
 
