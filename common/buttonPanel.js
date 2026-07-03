@@ -115,6 +115,7 @@ function renderButtonPanel(buttonSet) {
       izsauktPogasFunkciju(poga);
     });
     
+    //===========vai te ir ok? =
     if (poga.rinda === 1 || poga.rinda === undefined)  {
         rinda1.appendChild(btn);
     }
