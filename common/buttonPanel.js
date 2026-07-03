@@ -42,8 +42,21 @@ const BUTTONS_TITLE = {
       teksts: "Pārbaude",
       funkcija: "parbauditIzdali",
       klase: "poga-peleka"
-    }
-
+    },
+    
+    {
+       id: "BTN_TEST_PLAY",
+       teksts: "TESTS: IZSPĒLE",
+       funkcija: "showPlay",
+       klase: "poga-dzeltena"
+     },
+     
+     {
+       id: "BTN_TEST_FINISH",
+       teksts: "TESTS: FINIŠS",
+       funkcija: "showFinish",
+       klase: "poga-dzeltena"
+     }
   ]
 };
 
