@@ -113,10 +113,6 @@ const BUTTONS_PLAY = {
     { id:"BTN_PLAY_4", teksts:"4", funkcija:"", klase:"poga-zala", rinda:2 },
     { id:"BTN_PLAY_3", teksts:"3", funkcija:"", klase:"poga-zala", rinda:2 },
     { id:"BTN_PLAY_2", teksts:"2", funkcija:"", klase:"poga-zala", rinda:2 },
-   
-    { id:"BTN_PLAY_PASS", teksts:"PASS", funkcija:"", klase:"poga-zala", rinda:3 },
-    { id:"BTN_PLAY_X", teksts:"X", funkcija:"", klase:"poga-zala", rinda:3 },
-    { id:"BTN_PLAY_XX", teksts:"XX", funkcija:"", klase:"poga-zala" , rinda:3 },
 
     { id:"BTN_PLAY", teksts:"IZSPĒLE", funkcija:"", klase:"poga-zala", rinda:3 },
     { id:"BTN_PLAY_MENU", teksts:"IZVĒLNE", funkcija:"showTitle", klase:"poga-dzeltena", rinda:3 }
@@ -126,6 +122,8 @@ const BUTTONS_PLAY = {
 const BUTTONS_FINISH = {
   nosaukums: "FINIŠS",
   pogas: [
+    { id:"BTN_RESULT", teksts:"Rezultāts", funkcija:"", klase:"poga-peleka" }
+    { id:"BTN_REVIEW", teksts:"Review", funkcija:"", klase:"poga-peleka" }
     { id:"BTN_MENU_FINISH", teksts:"IZVĒLNE", funkcija:"showTitle", klase:"poga-dzeltena" }
   ]
 };
