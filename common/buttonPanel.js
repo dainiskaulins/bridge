@@ -91,6 +91,12 @@ function renderButtonPanel(buttonSet) {
 
   panelis.innerHTML = "";
 
+  // ----- paneļa virsraksts ----- 
+  const virsraksts = document.createElement("div");
+  virsraksts.className = "button-panel-title";
+  virsraksts.textContent = buttonSet.nosaukums;
+  panelis.appendChild(virsraksts);
+
   const rinda1 = document.createElement("div");
   const rinda2 = document.createElement("div");
   const rinda3 = document.createElement("div");
