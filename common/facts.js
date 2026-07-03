@@ -1,8 +1,8 @@
-// facts.js
-// STATUSS:
-// Pārņemts no common_old.
-// 01-JUL-2026 sākta pielāgošana GALDS versijai.
-//
+// common/facts.js
+// 
+// Spēles faktu datu modelis.
+// Šeit glabājas tikai tas, kas tiešām ir noticis: kārtis, dalītājs, solījumi, izspēlētās kārtis.
+// FACTS ir galvenais spēles stāvoklis.
 // ====================================================================
 // BRIDŽA SADALES DATU MODELIS
 //
@@ -24,7 +24,7 @@
 //
 // Šīs vērtības šeit NETIEK GLABĀTAS.
 //
-// Pogu funkcijas drīkst papildināt vai labot tikai šo objektu.
+// Pogu "action" funkcijas drīkst papildināt vai labot tikai šo objektu.
 // Visas pārējās funkcijas tikai nolasa šo objektu
 // un aprēķina vajadzīgo rezultātu.
 //
