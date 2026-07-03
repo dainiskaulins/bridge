@@ -3,4 +3,4 @@
 function log(message) {
     console.log(message);
 }
-console.log("utils.js ielādēts");
+console.log("common_old/utils.js ielādēts");
