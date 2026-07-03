@@ -38,6 +38,10 @@ function render() {
 
 //=========================================================
 function renderButtonPanel(buttonSet) {
+  console.log("sākam renderButtonPanel");
+  console.log(buttonSet.nosaukums);
+  console.log(buttonSet);
+  
   const panelis = document.getElementById("buttonPanel");
   if (!panelis) return;
 
