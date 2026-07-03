@@ -26,7 +26,7 @@ const BUTTONS_TITLE = {
     {
       id: "BTN_TUKSA_IZDALE",
       teksts: "Tukša izdale",
-      funkcija: "tuksaIzdale",
+      funkcija: "tuksaIzdaleClick",
       klase: "poga-zala"
     },
 
