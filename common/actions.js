@@ -7,7 +7,7 @@
 // Pirms izmaiņām darbības izmanto rules.js pārbaudes.
 
 function tuksaIzdale() {
-  facts.status = STATUS.EMPTY;
+  facts.status = "EMPTY"
   facts.hands = { N: [], E: [], S: [], W: [] };
   facts.bids = [];
   facts.plays = [];
