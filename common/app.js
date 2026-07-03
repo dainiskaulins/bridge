@@ -42,7 +42,7 @@ function generetIzdali() {
   facts.plays = [];
   facts.result = null;
   
-  rakstitProtokolu("ĢENERĒT IZDALI");
+  rakstitProtokolu("IZDALE ir ģenerēta");
 }
 
 function renderLogPanel() {
