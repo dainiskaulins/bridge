@@ -1,7 +1,9 @@
 // common/actions.js
 //
 // Darbības, kas maina FACTS.
-// Šeit pievieno solījumu, izspēlē kārti, ģenerē izdali, anulē pēdējo darbību.
+// actions.js nekad nezīmē ekrānu.
+// actions.js nekad neraksta logu.
+// Šeit ģenerē izdali, pievieno solījumu, izspēlē kārti, anulē pēdējo darbību.
 // Pirms izmaiņām darbības izmanto rules.js pārbaudes.
 
 function tuksaIzdale() {
