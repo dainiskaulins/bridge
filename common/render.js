@@ -73,8 +73,8 @@ function renderButtonPanel(buttonSet) {
    
   }
     panelis.appendChild(rinda1);
-    panelis.appendChild(rinda2);
     panelis.appendChild(rinda3);
+    panelis.appendChild(rinda2);
 }
 
 /* -----
