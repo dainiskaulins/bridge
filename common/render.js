@@ -37,54 +37,6 @@ function render() {
 } 
 
 //=========================================================
-function renderButtonPaneltOdELETE(buttonSet) {
-  console.log("sākam renderButtonPanel");
- // console.log(buttonSet.nosaukums);
-  console.log(buttonSet);
-  
-  const panelis = document.getElementById("buttonPanel");
-  if (!panelis) return;
-
-  panelis.innerHTML = "";
-  
-  const rinda1 = document.createElement("div");
-  const rinda2 = document.createElement("div");
-  const rinda3 = document.createElement("div");
-
-  const statuss = document.createElement("div");
-  statuss.id = "buttonStatus";
-  statuss.textContent = "Statuss: izvēlies darbību";
-  panelis.appendChild(statuss);
-
-  for (const poga of buttonSet.pogas) {
-    const btn = document.createElement("button");
-    btn.id = poga.id;
-    btn.className = "poga " + poga.klase;
-    btn.textContent = poga.teksts;
-
-    btn.addEventListener("click", function () {
-      izsauktPogasFunkciju(poga);
-    });
-    
-    if (poga.rinda === 1)
-        rinda1.appendChild(btn);
-        console.log("rinda1 atrasta");
-
-    if (poga.rinda === 2)
-        rinda2.appendChild(btn);
-        console.log("rinda2 atrasta");
-
-    if (poga.rinda === 3)
-        rinda3.appendChild(btn);
-        console.log("rinda3 atrasta");
-   
-  }
-    panelis.appendChild(rinda1);
-    panelis.appendChild(rinda3);
-    panelis.appendChild(rinda2);
-}
-
-//=========================================================
 function renderNorthPanel() {
   return `<div class="seat">N<br>${formatHand(facts.hands.N)}</div>`;
 }
