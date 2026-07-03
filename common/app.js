@@ -51,7 +51,7 @@ function generetIzdali() {
     W: deck.slice(39, 52)
   };
 
-  facts.dealer = "N";
+  facts.dealer = "S";
   facts.bids = [];
   facts.plays = [];
   facts.result = null;
