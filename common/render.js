@@ -37,7 +37,7 @@ function render() {
 } 
 
 //=========================================================
-function renderButtonPanel(buttonSet) {
+function renderButtonPaneltOdELETE(buttonSet) {
   console.log("sākam renderButtonPanel");
  // console.log(buttonSet.nosaukums);
   console.log(buttonSet);
