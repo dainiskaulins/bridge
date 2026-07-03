@@ -7,12 +7,11 @@
 // Pirms izmaiņām darbības izmanto rules.js pārbaudes.
 
 function tuksaIzdale() {
-
+  facts.status = STATUS.EMPTY;
   facts.hands = { N: [], E: [], S: [], W: [] };
   facts.bids = [];
   facts.plays = [];
   facts.result = null;
-
 }
 
 console.log("common/actions.js ielādēts");
