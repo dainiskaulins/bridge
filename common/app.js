@@ -8,13 +8,9 @@ function rakstitProtokolu(teksts) {
   console.log(teksts);
 }
 
-function tuksaIzdale() {
+function tuksaIzdaleClick() {
   console.log("Tukša izdale");
-  facts.hands = { N: [], E: [], S: [], W: [] };
-  facts.bids = [];
-  facts.plays = [];
-  facts.result = null;
-
+  tuksaIzdale();
   rakstitProtokolu("Tukša izdale");
   renderAll();
 }
