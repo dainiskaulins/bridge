@@ -21,8 +21,7 @@ function renderTitlePanel() {
 
   panelis.innerHTML = `
     <h2>Rubber Bridge</h2>
-
-  // ----- iziet uz iepriekšējo menu vie ārā ----- 
+  // ----- iziet uz iepriekšējo menu 
     <button class="poga poga-zala"
         onclick="location.href='../index.html'">
     EXIT
