@@ -72,7 +72,7 @@ const BUTTONS_BIDDING = {
 
     { id:"BTN_SOLIT", teksts:"SOLĪT", funkcija:"", klase:"poga-zala", rinda:3 },
 
-    { id:"BTN_EXIT", teksts:"JAUNA SPĒLE", funkcija:"jaunaSpele", klase:"poga-dzeltena", rinda:3 }
+    { id:"BTN_MENU", teksts:"IZVĒLNE", funkcija:"showTitle", klase:"poga-dzeltena", rinda:3 }
 
   ]
 };
