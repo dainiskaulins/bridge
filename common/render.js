@@ -42,6 +42,10 @@ function renderButtonPanel(buttonSet) {
   if (!panelis) return;
 
   panelis.innerHTML = "";
+  
+  const rinda1 = document.createElement("div");
+  const rinda2 = document.createElement("div");
+  const rinda3 = document.createElement("div");
 
   const statuss = document.createElement("div");
   statuss.id = "buttonStatus";
@@ -57,9 +61,20 @@ function renderButtonPanel(buttonSet) {
     btn.addEventListener("click", function () {
       izsauktPogasFunkciju(poga);
     });
+    
+    if (poga.rinda === 1)
+        rinda1.appendChild(btn);
 
-    panelis.appendChild(btn);
+    if (poga.rinda === 2)
+        rinda2.appendChild(btn);
+
+    if (poga.rinda === 3)
+        rinda3.appendChild(btn);
+   
   }
+    panelis.appendChild(rinda1);
+    panelis.appendChild(rinda2);
+    panelis.appendChild(rinda3);
 }
 
 /* -----
