@@ -9,12 +9,26 @@ function rakstitProtokolu(teksts) {
 }
 
 function tuksaIzdaleClick() {
-  console.log("Tukša izdale");
+  let r = varTuksaIzdale();
+
+  if (r.action === "DENY") {
+    rakstitProtokolu(r.text);
+    return;
+  }
+
+  if (r.action === "CONFIRM") {
+    if (!confirm(r.text)) {
+      rakstitProtokolu("Tukša izdale atcelta.");
+      return;
+    }
+  }
+
   tuksaIzdale();
-  rakstitProtokolu("Tukša izdale");
+  rakstitProtokolu("Tukša izdale.");
   renderAll();
 }
 
+//===================================
 function generetIzdali() {
   console.log("GENERET IZDALI");
   const mastis = ["S", "H", "D", "C"];
