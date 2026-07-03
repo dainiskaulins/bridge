@@ -60,6 +60,7 @@ const BUTTONS_TITLE = {
   ]
 };
 
+//=========================================
 const BUTTONS_BIDDING = {
   nosaukums: "SOLĪŠANA",
 
