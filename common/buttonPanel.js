@@ -9,6 +9,13 @@ const BUTTONS_TITLE = {
   nosaukums: "JAUNA SPĒLE",
    pogas: [
 
+     {
+      id: "BTN_TURPINAT",
+      teksts: "Turpināt spēli",
+      funkcija: "",
+      klase: "poga-zala"
+    },
+
     {
       id: "BTN_JAUNA_SPELE",
       teksts: "Jauna spēle",
