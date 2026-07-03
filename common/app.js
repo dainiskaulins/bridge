@@ -59,7 +59,8 @@ function generetIzdali() {
   //==========
   facts.status = "BIDDING"
   
-  rakstitProtokolu("IZDALE ir ģenerēta");
+  rakstitProtokolu("IZDALEEEEEEE ir ģenerēta");
+  rakstitProtokolu("Statuss: " + facts.status);
 }
 
 function renderLogPanel() {
