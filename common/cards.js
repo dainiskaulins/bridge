@@ -1,19 +1,21 @@
-/*    common/cards.js
-=========================================================
-Kāršu attēlošana.
-
-Uzdevums:
-- pārvērš kāršu masīvu skaistā tekstā pa mastīm.
-
-Kāršu attēlošana:
-♠ ♥ ♦ ♣
-
-Solīšanas secība:
-♣ ♦ ♥ ♠ NT
-
-Šie standarti netiek mainīti.   2026-07-01
-=========================================================
-*/
+//    common/cards.js
+//
+// Kāršu definīcijas un kāršu palīgfunkcijas.
+// Šeit dzīvo mastu, rangu un pilnas kavas apraksts.
+// Funkcijas palīdz ģenerēt, kārtot un attēlot kārtis.
+//=========================================================
+//Kāršu attēlošana.
+// Uzdevums:
+// - pārvērš kāršu masīvu skaistā tekstā pa mastīm.
+//
+// Kāršu attēlošana:
+// ♠ ♥ ♦ ♣
+//
+// Solīšanas secība:
+// ♣ ♦ ♥ ♠ NT
+//
+// Šie standarti netiek mainīti.   2026-07-01
+//=========================================================
 
 function formatHand(hand) {
 const suits = [
