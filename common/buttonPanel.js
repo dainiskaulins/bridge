@@ -115,7 +115,7 @@ function renderButtonPanel(buttonSet) {
       izsauktPogasFunkciju(poga);
     });
     
-    if (poga.rinda === 1 || poga.rinda === undefined))
+    if (poga.rinda === 1 || poga.rinda === undefined)
         rinda1.appendChild(btn);
 
     if (poga.rinda === 2)
