@@ -1,12 +1,12 @@
-/* common/buttonPanel.js
-=========================================================
-Stabila pagaidu versija.
-Rāda tikai divas pogas: Jauna spēle, Tukša izdale.
-=========================================================
-*/
+// common/buttonPanel.js
+//
+// Veido pogu paneli uz ekrāna.
+// Pogas ir lietotāja komandas: dalīt, solīt, spēlēt, pārzīmēt u.c.
+// Šis fails tikai zīmē pogas un piesaista tām darbības.
 
+//=========================================
 const BUTTONS_TITLE = {
-  nosaukums: "JAUNA SPĒLE",
+  nosaukums: "JAUNA SPĒLE?",
    pogas: [
 
      {
