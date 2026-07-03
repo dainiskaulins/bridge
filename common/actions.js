@@ -14,3 +14,5 @@ function tuksaIzdale() {
   facts.result = null;
 
 }
+
+console.log("common/actions.js ielādēts");
