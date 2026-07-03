@@ -4,6 +4,7 @@
 // Šeit nosaka, vai konkrēta darbība ir atļauta vai aizliegta.
 // Šis fails pats neko nedara ar FACTS — tikai dod jā/nē un paskaidrojumu.
 // 
+
 function varTuksaIzdale() {
   if (facts.status === STATUS.EMPTY) {
     return { action: "ALLOW" };
