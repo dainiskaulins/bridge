@@ -34,6 +34,32 @@
 //
 // ====================================================================
 
+// ------------------------------------------------------------
+    // Spēles statusi un režīmi
+    // status     — spēles fāze: EMPTY / DEALT / BIDDING / PLAYING / FINISHED
+    // viewMode   — redzamība: OPEN / HIDDEN / PLAYER_ONLY
+    // testMode   — testa režīms: true / false
+    // ------------------------------------------------------------
+    const STATUS = {
+       EMPTY: "EMPTY",
+       DEALT: "DEALT",
+       BIDDING: "BIDDING",
+       PLAYING: "PLAYING",
+       FINISHED: "FINISHED"
+    };
+
+    const VIEW_MODE = {
+      OPEN: "OPEN",
+      HIDDEN: "HIDDEN",
+      PLAYER_ONLY: "PLAYER_ONLY"
+    };
+
+     const TEST_MODE = {
+        OFF: "OFF",
+        ON: "ON"
+     };
+
+
 const facts = {
 
     // ------------------------------------------------------------
@@ -43,8 +69,12 @@ const facts = {
     // šis numurs jāpalielina.
     // ------------------------------------------------------------
 
-    version: "GALDS 0.0.2",
+    version: "GALDS 0.0.3",
 
+    status: STATUS.EMPTY,
+    viewMode: VIEW_MODE.OPEN,
+    testMode: TEST_MODE.OFF,
+ 
     // ------------------------------------------------------------
     // Sākuma kāršu sadalījums.
     //
