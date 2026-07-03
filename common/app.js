@@ -1,4 +1,8 @@
 // common/app.js
+//
+// Galvenais starta fails.
+// Ielādē programmu, piesaista pogas funkcijām un palaiž pirmo ekrāna pārzīmēšanu.
+// Šeit nedrīkst krāt lielu spēles loģiku — tikai vadība.
 
 function rakstitProtokolu(teksts) {
   console.log(teksts);
