@@ -166,6 +166,9 @@ function biddingButtonClick(value) {
 
     console.log(facts.bids);
   }
+
+  console.log(biddingInput);
+  return result;
 }
 
 //=======================================
