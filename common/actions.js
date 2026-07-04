@@ -76,15 +76,69 @@ let biddingInput = {
 // ============================================================
 
 function biddingButtonClick(value) {
-    console.log("Solīšanas poga:" + value );
+    console.log("Solīšanas poga: " + value );
+    console.log("Sola: " + biddingInput.player );
+    console.log(biddingInput);
+  
     let result = {
         ok: true,
-        message: "Nospiesta solīšanas poga: " + value,
-        refresh: false
+        message: "",
+        refresh: true
     };
 
+    // ----------------------------------------------------
+    // Solījuma līmenis
+    // ----------------------------------------------------
+    if (["1","2","3","4","5","6","7"].includes(value)) {
+        biddingInput.callType = "BID";
+        biddingInput.level = value;
+    }
+
+    // ----------------------------------------------------
+    // Solījuma masts
+    // ----------------------------------------------------
+    if (["C","D","H","S","NT"].includes(value)) {
+        biddingInput.callType = "BID";
+        biddingInput.suit = value;
+    }
+
+    // ----------------------------------------------------
+    // PASS
+    // ----------------------------------------------------
+    if (value == "PASS") {
+        biddingInput.callType = "PASS";
+        biddingInput.level = null;
+        biddingInput.suit = null;
+    }
+
+    // ----------------------------------------------------
+    // X
+    // ----------------------------------------------------
+    if (value == "X") {
+        biddingInput.callType = "X";
+        biddingInput.level = null;
+        biddingInput.suit = null;
+    }
+
+    // ----------------------------------------------------
+    // XX
+    // ----------------------------------------------------
+    if (value == "XX") {
+        biddingInput.callType = "XX";
+        biddingInput.level = null;
+        biddingInput.suit = null;
+    }
+
+    // ----------------------------------------------------
+    // SOLIT
+    // ----------------------------------------------------
+    if (value == "SOLIT") {
+        result.message = "SOLĪT nospiests.";
+
+    }
+    console.log(biddingInput);
     return result;
-};
+}
 
 //=======================================
 console.log("common/actions.js ielādēts");
