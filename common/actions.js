@@ -7,7 +7,7 @@
 // Pirms izmaiņām darbības izmanto rules.js pārbaudes.
 
 function tuksaIzdale() {
-  facts.status = "EMPTY"
+  facts.status = "EMPTY";
   facts.hands = { N: [], E: [], S: [], W: [] };
   facts.bids = [];
   facts.plays = [];
@@ -76,7 +76,7 @@ let biddingInput = {
 // ============================================================
 
 function biddingButtonClick(value) {
-     console.log("Solišanas poga:" + value );
+    console.log("Solišanas poga:" + value );
     let result = {
         ok: true,
         message: "",
