@@ -186,7 +186,7 @@ function renderButtonPanel(buttonSet) {
   if (biddingInput.callType == "PASS") teksts = "PASS";
   if (biddingInput.callType == "X") teksts = "X";
   if (biddingInput.callType == "XX") teksts = "XX";
-  statuss.textContent ="Sola " + biddingInput.player + ": " + teksts
+  statuss.textContent ="Sola " + biddingInput.player + ": " + teksts;
   
   //---
   panelis.appendChild(statuss);
