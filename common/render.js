@@ -33,11 +33,46 @@ function renderTitlePanel() {
    `;
 }
   
-function render() {
-  document.getElementById("logPanel").textContent =
-    "FACTS\n" +
-    JSON.stringify(facts, null, 2);
+//function render() {
+//  document.getElementById("logPanel").textContent =
+//    "FACTS\n" +
+//   JSON.stringify(facts, null, 2);
+//} 
+// ----------------------
+// ============================================================
+// Solīšanas protokola pārzīmēšana.
+//
+// No FACTS izveido cilvēkam lasāmu
+// solīšanas protokolu.
+// ============================================================
+function renderProtocolPanel() {
+    const logs = document.getElementById("protocolPanel");
+
+    if (!logs) return;
+    let teksts = "";
+    for (const solijums of facts.bids) {
+        teksts +=
+            solijums.player +
+            " " +
+            solijums.solijums +
+            "\n";
+    }
+    logs.textContent = teksts;
 } 
+
+// ============================================================
+// FACTS loga pārzīmēšana.
+//
+// Parāda visu FACTS objektu tehniskā veidā.
+// Domāts atkļūdošanai un testēšanai.
+// ============================================================
+function renderFactsPanel() {
+    const logs = document.getElementById("logPanel");
+    if (!logs) return;
+    logs.textContent =
+        "FACTS\n\n" +
+        JSON.stringify(facts, null, 2);
+}
 
 //=========================================================
 function renderNorthPanel() {
