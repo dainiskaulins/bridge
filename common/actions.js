@@ -133,7 +133,17 @@ function biddingButtonClick(value) {
     // SOLIT
     // ----------------------------------------------------
     if (value == "SOLIT") {
-       result.message = "SOLĪT nospiests.";
+      result.message = "SOLĪT nospiests.";
+
+    // Pārbaudīt, vai solījums ir legāls.
+       let result = solParbaudit();
+
+       if (!result.ok) {
+           return result;
+       }
+
+    // No šīs vietas uz leju viss ir legāls.
+    // Veido solījumu.
       
       let solijums;
       
