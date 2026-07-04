@@ -79,7 +79,30 @@ function solParbaudit() {
 function solSakumaKontraRekontra() {
     // lasa biddingInput
     // lasa facts
+    if (facts.bids.length == 0) {
+
+        if (biddingInput.callType == "X") {
+            return {
+                ok: false,
+                message: "Solīšanas sākumā kontra nav atļauta."
+            };
+        }
+
+        if (biddingInput.callType == "XX") {
+            return {
+                ok: false,
+                message: "Solīšanas sākumā rekontra nav atļauta."
+            };
+        }
+
+    }
+
+    return {
+        ok: true,
+        message: ""
+    };
 }
+
 function solSolijumsAugstaks() {
     // lasa biddingInput
     // lasa facts
