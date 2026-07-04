@@ -84,6 +84,7 @@ function biddingButtonClick(value) {
     };
 
     return result;
-}
+};
+
 //=======================================
 console.log("common/actions.js ielādēts");
