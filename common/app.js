@@ -6,10 +6,11 @@
 
 function rakstitProtokolu(teksts) {
   console.log("common/app.js funkcija rakstitProtokolu (teksts) ");
-
   console.log(teksts);
-  const logs = document.getElementById("protokols");
+
+  const logs = document.getElementById("logPanel");
   if (!logs) return;
+
   logs.textContent += teksts + "\n";
 }  
 
