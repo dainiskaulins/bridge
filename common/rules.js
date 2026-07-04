@@ -218,36 +218,33 @@ function solKontraAtlauta() {
     // 1. variants.
     // Pēdējais solījums ir īsts pretinieka solījums.
     // ---------------------------------------------
-    if (
-        C &&
-        irIstaisSolijums(C.solijums) &&
-        irPretinieks(C.player, biddingInput.player)
-    ) {
-        return {
-            ok: true,
-            message: ""
-        };
+    if (C != null) {
+        if (irIstaisSolijums(C.solijums)) {
+            return {
+                ok: true,
+                message: ""
+            };
+        }
     }
-
+ 
     // ---------------------------------------------
     // 2. variants.
-    // Pretinieks solījis.
-    // Pēc tam viens PASS.
+    // Pirms diviem gājieniem pretinieks solīja.
+    // Partneris PASS
+    // Kontra joprojām ir atļauta.
     // ---------------------------------------------
-    if (
-        A &&
-        irIstaisSolijums(A.solijums) &&
-        irPretinieks(A.player, biddingInput.player) &&
-        B &&
-        B.solijums == "PASS"
-    ) {
-        return {
-            ok: true,
-            message: ""
-        };
-    }
-
-    // ---------------------------------------------
+    if (A != null) {
+      if (irIstaisSolijums(A.solijums)) {
+          if (B != null) {
+              if (B.solijums == "PASS") {
+                 return {
+                    ok: true,
+                    message: ""
+              };
+            }
+          }
+       }
+    } 
     // Kontra nav atļauta.
     // ---------------------------------------------
     return {
@@ -276,15 +273,7 @@ function irIstaisSolijums(solijums) {
 
     return true;
 }
-//------------------------
-function irPretinieks(p1, p2) {
-    if (p1 == "N" && (p2 == "E" || p2 == "W")) return true;
-    if (p1 == "S" && (p2 == "E" || p2 == "W")) return true;
-    if (p1 == "E" && (p2 == "N" || p2 == "S")) return true;
-    if (p1 == "W" && (p2 == "N" || p2 == "S")) return true;
 
-    return false;
-}
 // ----------------------------------
 function solRekontraAtlauta() {
     // lasa biddingInput
