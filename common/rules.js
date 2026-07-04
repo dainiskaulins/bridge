@@ -183,14 +183,40 @@ function mastaVertiba(masts) {
     if (masts == "NT") return 5;
 }
 
+//-----------------------------------------------------
 function solKontraAtlauta() {
-    // lasa biddingInput
-    // lasa facts
-   return {
+    // Pārbauda tikai X.
+    if (biddingInput.callType != "X") {
+        return {
+            ok: true,
+            message: ""
+        };
+    }
+
+    // Nav neviena iepriekšēja solījuma.
+    if (facts.bids.length == 0) {
+        return {
+            ok: false,
+            message: "Kontra nav atļauta."
+        };
+    }
+    // temporāri! !!!!!!!!!
+    let pedejais = facts.bids[facts.bids.length - 1].solijums;
+
+    // Pēdējam jābūt īstam solījumam.
+    if (pedejais == "PASS" || pedejais == "X" || pedejais == "XX") {
+        return {
+            ok: false,
+            message: "Kontra nav atļauta."
+        };
+    }
+
+    return {
         ok: true,
         message: ""
     };
-}
+}    
+// ----------------------------------
 function solRekontraAtlauta() {
     // lasa biddingInput
     // lasa facts
