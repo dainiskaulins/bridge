@@ -5,7 +5,7 @@
 // Šis fails pats neko nedara ar FACTS — tikai dod jā/nē un paskaidrojumu.
 // 
 
-function varTuksaIzdale() {
+function preVarTuksaIzdale() {
   if (facts.status === STATUS.EMPTY) {
     return { action: "ALLOW" };
   }
