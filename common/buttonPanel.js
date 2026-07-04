@@ -66,25 +66,25 @@ const BUTTONS_BIDDING = {
 
   pogas: [
 
-    { id:"BTN_1", teksts:"1", funkcija:"", klase:"poga-zala", rinda:1 },
-    { id:"BTN_2", teksts:"2", funkcija:"", klase:"poga-zala", rinda:1 },
-    { id:"BTN_3", teksts:"3", funkcija:"", klase:"poga-zala", rinda:1 },
-    { id:"BTN_4", teksts:"4", funkcija:"", klase:"poga-zala", rinda:1 },
-    { id:"BTN_5", teksts:"5", funkcija:"", klase:"poga-zala", rinda:1 },
-    { id:"BTN_6", teksts:"6", funkcija:"", klase:"poga-zala", rinda:1 },
-    { id:"BTN_7", teksts:"7", funkcija:"", klase:"poga-zala", rinda:1 },
+    { id:"BTN_1", teksts:"1", funkcija:"biddingButtonClick('1')", klase:"poga-zala", rinda:1 },
+    { id:"BTN_2", teksts:"2", funkcija:"biddingButtonClick('2')", klase:"poga-zala", rinda:1 },
+    { id:"BTN_3", teksts:"3", funkcija:"biddingButtonClick('3')", klase:"poga-zala", rinda:1 },
+    { id:"BTN_4", teksts:"4", funkcija:"biddingButtonClick('4')", klase:"poga-zala", rinda:1 },
+    { id:"BTN_5", teksts:"5", funkcija:"biddingButtonClick('5')", klase:"poga-zala", rinda:1 },
+    { id:"BTN_6", teksts:"6", funkcija:"biddingButtonClick('6')", klase:"poga-zala", rinda:1 },
+    { id:"BTN_7", teksts:"7", funkcija:"biddingButtonClick('7')", klase:"poga-zala", rinda:1 },
 
-    { id:"BTN_C", teksts:"♣", funkcija:"", klase:"poga-zala", rinda:2 },
-    { id:"BTN_D", teksts:"♦", funkcija:"", klase:"poga-zala", rinda:2 },
-    { id:"BTN_H", teksts:"♥", funkcija:"", klase:"poga-zala", rinda:2 },
-    { id:"BTN_S", teksts:"♠", funkcija:"", klase:"poga-zala", rinda:2 },
-    { id:"BTN_NT", teksts:"NT", funkcija:"", klase:"poga-zala", rinda:2 },
+    { id:"BTN_C", teksts:"♣", funkcija:"biddingButtonClick('C')", klase:"poga-zala", rinda:2 },
+    { id:"BTN_D", teksts:"♦", funkcija:"biddingButtonClick('D')", klase:"poga-zala", rinda:2 },
+    { id:"BTN_H", teksts:"♥", funkcija:"biddingButtonClick('H')", klase:"poga-zala", rinda:2 },
+    { id:"BTN_S", teksts:"♠", funkcija:"biddingButtonClick('S')", klase:"poga-zala", rinda:2 },
+    { id:"BTN_NT", teksts:"NT", funkcija:"biddingButtonClick('NT')", klase:"poga-zala", rinda:2 },
 
-    { id:"BTN_PASS", teksts:"PASS", funkcija:"", klase:"poga-zala", rinda:3 },
-    { id:"BTN_X", teksts:"X", funkcija:"", klase:"poga-zala", rinda:3 },
-    { id:"BTN_XX", teksts:"XX", funkcija:"", klase:"poga-zala" , rinda:3 },
+    { id:"BTN_PASS", teksts:"PASS", funkcija:"biddingButtonClick('PASS')", klase:"poga-zala", rinda:3 },
+    { id:"BTN_X", teksts:"X", funkcija:"biddingButtonClick('X')", klase:"poga-zala", rinda:3 },
+    { id:"BTN_XX", teksts:"XX", funkcija:"biddingButtonClick('XX')", klase:"poga-zala" , rinda:3 },
 
-    { id:"BTN_SOLIT", teksts:"SOLĪT", funkcija:"", klase:"poga-zala", rinda:3 },
+    { id:"BTN_SOLIT", teksts:"SOLĪT", funkcija:"biddingButtonClick('SOLIT')", klase:"poga-zala", rinda:3 },
 
     { id:"BTN_MENU", teksts:"IZVĒLNE", funkcija:"showTitle", klase:"poga-dzeltena", rinda:3 }
 
