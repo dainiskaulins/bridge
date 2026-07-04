@@ -135,13 +135,16 @@ function izsauktPogasFunkciju(poga) {
   const fn = window[poga.funkcija];
 
   if (typeof fn === "function") {
-
+    let result;
     if (poga.parametrs !== undefined) {
-      fn(poga.parametrs);
+      result = fn(poga.parametrs);
     } else {
-      fn();
+      result = fn();
     }
 
+    if (result && result.message) {
+      rakstitProtokolu(result.message);
+    }
   } else {
     console.log("Funkcija vēl nav realizēta: " + poga.funkcija + "()");
   }
