@@ -90,6 +90,7 @@ const BUTTONS_BIDDING = {
 
   ]
 };
+
 //=========================================
 const BUTTONS_PLAY = {
   nosaukums: "IZSPĒLE",
