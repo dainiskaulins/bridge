@@ -177,7 +177,18 @@ function renderButtonPanel(buttonSet) {
   const statuss = document.createElement("div");
   statuss.id = "buttonStatus";
   statuss.className = "button-status";
-  statuss.textContent = "Solu: -";
+
+  //-------- solīšanas procesa attēls -----
+    let teksts = "-";
+   if (biddingInput.callType == "BID") {
+    teksts = (biddingInput.level || "") + (biddingInput.suit || "");
+  }
+  if (biddingInput.callType == "PASS") teksts = "PASS";
+  if (biddingInput.callType == "X") teksts = "X";
+  if (biddingInput.callType == "XX") teksts = "XX";
+  statuss.textContent ="Sola " + biddingInput.player + ": " + teksts
+  
+  //---
   panelis.appendChild(statuss);
 
   const rinda = document.createElement("div");
