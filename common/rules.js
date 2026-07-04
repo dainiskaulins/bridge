@@ -106,6 +106,24 @@ function solSakumaKontraRekontra() {
 function solSolijumsAugstaks() {
     // lasa biddingInput
     // lasa facts
+   let pedejais = null;
+
+   for (const b of facts.bids) {
+
+      if (
+          b.solijums != "PASS" &&
+          b.solijums != "X" &&
+          b.solijums != "XX"
+      ) {
+        pedejais = b.solijums;
+        }
+   }
+    if (pedejais == null) {
+       return {
+         ok: true,
+         message: ""
+      };
+    }  
 }
 function solKontraAtlauta() {
     // lasa biddingInput
