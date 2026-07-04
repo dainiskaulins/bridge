@@ -5,9 +5,15 @@
 // Šeit nedrīkst krāt lielu spēles loģiku — tikai vadība.
 
 function rakstitProtokolu(teksts) {
-  console.log(teksts);
-}
+  console.log("common/app.js funkcija rakstitProtokolu (teksts) ");
 
+  console.log(teksts);
+  const logs = document.getElementById("protokols");
+  if (!logs) return;
+  logs.textContent += teksts + "\n";
+}  
+
+//---------------
 function tuksaIzdaleClick() {
   let r = varTuksaIzdale();
 
