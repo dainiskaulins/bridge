@@ -79,13 +79,9 @@ function biddingButtonClick(value) {
     console.log("Solīšanas poga: " + value );
     console.log("Sola: " + biddingInput.player );
     console.log(biddingInput);
-  
-    let result = {
-        ok: true,
-        message: "",
-        refresh: true
-    };
 
+    let result = { ok:true, message:"", refresh:true };
+    
     // ----------------------------------------------------
     // Solījuma līmenis
     // ----------------------------------------------------
@@ -134,7 +130,7 @@ function biddingButtonClick(value) {
     // ----------------------------------------------------
     if (value == "SOLIT") {
       result.message = "SOLĪT nospiests.";
-
+    
     // Pārbaudīt, vai solījums ir legāls.
        let result = solParbaudit();
 
