@@ -107,6 +107,8 @@ function solSakumaKontraRekontra() {
 }
 
 function solSolijumsAugstaks() {
+    console.log("Sāk  solSolijumsAugstaks");
+  
     // lasa biddingInput
     // lasa facts
    let pedejais = null;
