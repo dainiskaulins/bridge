@@ -9,6 +9,7 @@
 // isz → izspēle
 // pos → viss pēc izspēles
 
+// ----------- pre ------------
 function preVarTuksaIzdale() {
   if (facts.status === STATUS.EMPTY) {
     return { action: "ALLOW" };
@@ -37,5 +38,60 @@ function preVarTuksaIzdale() {
     text: "Nezināms spēles statuss. Drošības pēc darbība apturēta."
   };
 }
+// ------------- sol -----------------
 
+// ============================================================
+// Pārbauda, vai nākamais solījums ir atļauts.
+//
+// Salīdzina biddingInput ar pašreizējo spēles stāvokli FACTS.
+//
+// Atgriež:
+//
+// {
+//     ok: true | false,
+//     message: "Paskaidrojums"
+// }
+//
+// Ja ok = true, solījumu drīkst ierakstīt FACTS.
+// Ja ok = false, FACTS netiek mainīts.
+// ============================================================
+function solParbaudit() {
+
+    let r;
+
+    r = solSakumaKontraRekontra();
+    if (!r.ok) return r;
+
+    r = solSolijumsAugstaks();
+    if (!r.ok) return r;
+
+    r = solKontraAtlauta();
+    if (!r.ok) return r;
+
+    r = solRekontraAtlauta();
+    if (!r.ok) return r;
+
+    return {
+        ok: true,
+        message: ""
+    };
+}
+function solSakumaKontraRekontra() {
+    // lasa biddingInput
+    // lasa facts
+}
+function solSolijumsAugstaks() {
+    // lasa biddingInput
+    // lasa facts
+}
+function solKontraAtlauta() {
+    // lasa biddingInput
+    // lasa facts
+}
+function solRekontraAtlauta() {
+    // lasa biddingInput
+    // lasa facts
+}
+
+//-----------------------
 console.log("common/rules.js ielādēts");
