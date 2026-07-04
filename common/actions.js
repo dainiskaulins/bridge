@@ -79,7 +79,7 @@ function biddingButtonClick(value) {
     console.log("Solišanas poga:" + value );
     let result = {
         ok: true,
-        message: "",
+        message: "Nospiesta solīšanas poga: " + value,
         refresh: false
     };
 
