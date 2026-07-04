@@ -16,6 +16,9 @@ bet ieraksta protokolā paziņojumu, ka funkcija vēl nav realizēta.
 */
 
 function rakstitProtokolu(teksts) {
+  console.log("Testssss rakstitProtokolu 04-jul-2026");
+  console.log("Teksts: " + teksts");
+  
   const protokols = document.getElementById("protokols");
 
   if (protokols) {
