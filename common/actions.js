@@ -133,11 +133,38 @@ function biddingButtonClick(value) {
     // SOLIT
     // ----------------------------------------------------
     if (value == "SOLIT") {
-        result.message = "SOLĪT nospiests.";
+       result.message = "SOLĪT nospiests.";
+      
+      let solijums;
+      
+      if (biddingInput.callType == "BID") {
+        if (biddingInput.level == null || biddingInput.suit == null) {
+            result.ok = false;
+            result.message = "Solījums nav pilns: vajag level un suit.";
+            return result;
+        }
 
+        solijums = biddingInput.level + biddingInput.suit;
+
+    } else {
+        if (biddingInput.callType == null) {
+            result.ok = false;
+            result.message = "Nav izvēlēts solījums.";
+            return result;
+        }
+
+        solijums = biddingInput.callType;
     }
-    console.log(biddingInput);
-    return result;
+
+    facts.bids.push({
+        player: biddingInput.player,
+        solijums: solijums
+    });
+
+    result.message = biddingInput.player + " sola " + solijums;
+    result.refresh = true;
+
+    console.log(facts.bids);
 }
 
 //=======================================
