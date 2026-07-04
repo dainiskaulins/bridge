@@ -160,7 +160,9 @@ function biddingButtonClick(value) {
         player: biddingInput.player,
         solijums: solijums
     });
-
+    // -------
+    biddingInput.player = nakamaisSpeletajs(biddingInput.player);
+      
     result.message = biddingInput.player + " sola " + solijums;
     result.refresh = true;
 
