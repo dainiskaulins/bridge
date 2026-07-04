@@ -72,17 +72,19 @@ function generetIzdali() {
   rakstitProtokolu("Statuss: " + facts.status);
 }
 
-function renderLogPanel() {
-  document.getElementById("logPanel").textContent =
-    "FACTS\n" +
-    JSON.stringify(facts, null, 2);
-}
+// aizstāta ar renderFactsPanel
+//function renderLogPanel() {
+//  document.getElementById("logPanel").textContent =
+//    "FACTS\n" +
+//    JSON.stringify(facts, null, 2);
+//}
 
 function renderAll() {
     renderTitlePanel();
     renderButtonPanel(BUTTONS_BIDDING);
     renderTablePanel();
-    renderLogPanel();
+    renderProtocolPanel();
+    renderFactsPanel();
 }
 
 function jaunaSpele() {
