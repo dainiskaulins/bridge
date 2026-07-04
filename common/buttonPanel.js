@@ -145,6 +145,9 @@ function izsauktPogasFunkciju(poga) {
     if (result && result.message) {
       rakstitProtokolu(result.message);
     }
+    if (result && result.refresh) {
+      renderAll();
+    }
   } else {
     console.log("Funkcija vēl nav realizēta: " + poga.funkcija + "()");
   }
