@@ -46,6 +46,9 @@ function renderTitlePanel() {
 // solīšanas protokolu.
 // ============================================================
 function renderProtocolPanel() {
+    console.log("common/renderProtocolPanel sākas");
+    console.log("???");
+  
     const logs = document.getElementById("protocolPanel");
 
     if (!logs) return;
