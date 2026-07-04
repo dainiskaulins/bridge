@@ -16,7 +16,7 @@ function rakstitProtokolu(teksts) {
 
 //---------------
 function tuksaIzdaleClick() {
-  let r = varTuksaIzdale();
+  let r = preVarTuksaIzdale();
 
   if (r.action === "DENY") {
     rakstitProtokolu(r.text);
