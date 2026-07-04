@@ -57,9 +57,11 @@ function generetIzdali() {
   facts.result = null;
   
   //==========
-  facts.status = "BIDDING"
+  facts.status = "BIDDING";
+  biddingInput.player = facts.dealer;
+  console.log("Spēlētājs" + biddingInput.player);
   
-  rakstitProtokolu("IZDALEEEEEEE ir ģenerēta");
+  rakstitProtokolu("IZDALE ir ģenerēta");
   rakstitProtokolu("Statuss: " + facts.status);
 }
 
