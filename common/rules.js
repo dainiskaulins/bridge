@@ -118,7 +118,10 @@ function solSolijumsAugstaks() {
         pedejais = b.solijums;
         }
    }
-    if (pedejais == null) {
+    
+      console.log("Pēdējais solījums bija: " + pedejais );
+  
+      if (pedejais == null) {
        return {
          ok: true,
          message: ""
