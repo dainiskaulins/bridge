@@ -165,6 +165,7 @@ function biddingButtonClick(value) {
     result.refresh = true;
 
     console.log(facts.bids);
+  }
 }
 
 //=======================================
