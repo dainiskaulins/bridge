@@ -132,10 +132,10 @@ function biddingButtonClick(value) {
       result.message = "SOLĪT nospiests.";
     
     // Pārbaudīt, vai solījums ir legāls.
-       let result = solParbaudit();
+       let res = solParbaudit();
 
-       if (!result.ok) {
-           return result;
+       if (!res.ok) {
+           return res;
        }
 
     // No šīs vietas uz leju viss ir legāls.
