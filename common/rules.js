@@ -107,10 +107,8 @@ function solSakumaKontraRekontra() {
 }
 
 function solSolijumsAugstaks() {
-    console.log("Sāk  solSolijumsAugstaks");
+   console.log("Sāk ??? solSolijumsAugstaks");
   
-    // lasa biddingInput
-    // lasa facts
    let pedejais = null;
 
    for (const b of facts.bids) {
@@ -132,11 +130,50 @@ function solSolijumsAugstaks() {
          message: ""
       };
     }
-  
+// ----- salidzināšana -----
+let vecaisLevel = Number(pedejais.charAt(0));
+let vecaisMasts = pedejais.substring(1);
+
+let jaunaisLevel = Number(biddingInput.level);
+let jaunaisMasts = biddingInput.suit;
+
+// lielāks līmenis
+if (jaunaisLevel > vecaisLevel) {
     return {
         ok: true,
-        message: "oooooooo" + pedejais
+        message: ""
     };
+}
+
+// mazāks līmenis
+if (jaunaisLevel < vecaisLevel) {
+    return {
+        ok: false,
+        message: "Solījumam jābūt augstākam par " + pedejais + "."
+    };
+}
+
+// vienāds līmenis - salīdzina mastu
+if (mastaVertiba(jaunaisMasts) > mastaVertiba(vecaisMasts)) {
+    return {
+        ok: true,
+        message: ""
+    };
+}
+return {
+    ok: false,
+    message: "Solījumam jābūt augstākam par " + pedejais + "."
+};
+
+}
+
+//----  
+function mastaVertiba(masts) {
+    if (masts == "C")  return 1;
+    if (masts == "D")  return 2;
+    if (masts == "H")  return 3;
+    if (masts == "S")  return 4;
+    if (masts == "NT") return 5;
 }
 
 function solKontraAtlauta() {
