@@ -108,7 +108,14 @@ function solSakumaKontraRekontra() {
 
 function solSolijumsAugstaks() {
    console.log("Sāk ??? solSolijumsAugstaks");
-  
+  // ja solījums nav "BID" šī pārbaude nav
+  if (biddingInput.callType != "BID") {
+    return {
+        ok: true,
+        message: ""
+    };
+}
+   // -----
    let pedejais = null;
 
    for (const b of facts.bids) {
