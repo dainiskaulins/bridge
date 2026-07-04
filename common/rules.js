@@ -123,15 +123,29 @@ function solSolijumsAugstaks() {
          ok: true,
          message: ""
       };
-    }  
+    }
+  
+    return {
+        ok: true,
+        message: "oooooooo" + pedejais
+    };
 }
+
 function solKontraAtlauta() {
     // lasa biddingInput
     // lasa facts
+   return {
+        ok: true,
+        message: ""
+    };
 }
 function solRekontraAtlauta() {
     // lasa biddingInput
     // lasa facts
+   return {
+        ok: true,
+        message: ""
+    };
 }
 
 //-----------------------
