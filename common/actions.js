@@ -160,8 +160,11 @@ function biddingButtonClick(value) {
         player: biddingInput.player,
         solijums: solijums
     });
-    // -------
+    // -------nākošais solītājs -----
     biddingInput.player = nakamaisSpeletajs(biddingInput.player);
+    biddingInput.callType = null;
+    biddingInput.level = null;
+    biddingInput.suit = null;
       
     result.message = biddingInput.player + " sola " + solijums;
     result.refresh = true;
