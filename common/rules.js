@@ -61,10 +61,13 @@ function solParbaudit() {
 
     r = solSakumaKontraRekontra();
     if (!r.ok) return r;
-
+    
+    console.log("Pirms: solSolijumsAugstaks" );
+    
     r = solSolijumsAugstaks();
     if (!r.ok) return r;
-
+    console.log("Aiz: solSolijumsAugstaks" );
+  
     r = solKontraAtlauta();
     if (!r.ok) return r;
 
