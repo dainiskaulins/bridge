@@ -183,8 +183,23 @@ function mastaVertiba(masts) {
     if (masts == "NT") return 5;
 }
 
-//-----------------------------------------------------
+// ============================================================
+// Pārbauda, vai kontra ir atļauta.
+//
+// Izmanto tikai pēdējos trīs solījumus.
+//
+// Kontra atļauta:
+//
+// 1) Ja pēdējais (-1) ir īsts pretinieka solījums.
+//
+// 2) Ja trešais no beigām (-3) ir īsts pretinieka
+//    solījums un otrais no beigām (-2) ir PASS.
+//
+// Visos pārējos gadījumos kontra nav atļauta.
+// ============================================================
+
 function solKontraAtlauta() {
+
     // Pārbauda tikai X.
     if (biddingInput.callType != "X") {
         return {
@@ -193,29 +208,83 @@ function solKontraAtlauta() {
         };
     }
 
-    // Nav neviena iepriekšēja solījuma.
-    if (facts.bids.length == 0) {
+    let n = facts.bids.length;
+
+    let A = (n >= 3) ? facts.bids[n - 3] : null;
+    let B = (n >= 2) ? facts.bids[n - 2] : null;
+    let C = (n >= 1) ? facts.bids[n - 1] : null;
+
+    // ---------------------------------------------
+    // 1. variants.
+    // Pēdējais solījums ir īsts pretinieka solījums.
+    // ---------------------------------------------
+    if (
+        C &&
+        irIstaisSolijums(C.solijums) &&
+        irPretinieks(C.player, biddingInput.player)
+    ) {
         return {
-            ok: false,
-            message: "Kontra nav atļauta."
+            ok: true,
+            message: ""
         };
     }
-    // temporāri! !!!!!!!!!
-    let pedejais = facts.bids[facts.bids.length - 1].solijums;
 
-    // Pēdējam jābūt īstam solījumam.
-    if (pedejais == "PASS" || pedejais == "X" || pedejais == "XX") {
+    // ---------------------------------------------
+    // 2. variants.
+    // Pretinieks solījis.
+    // Pēc tam viens PASS.
+    // ---------------------------------------------
+    if (
+        A &&
+        irIstaisSolijums(A.solijums) &&
+        irPretinieks(A.player, biddingInput.player) &&
+        B &&
+        B.solijums == "PASS"
+    ) {
         return {
-            ok: false,
-            message: "Kontra nav atļauta."
+            ok: true,
+            message: ""
         };
     }
 
+    // ---------------------------------------------
+    // Kontra nav atļauta.
+    // ---------------------------------------------
     return {
-        ok: true,
-        message: ""
+        ok: false,
+        message: "Kontra nav atļauta."
     };
-}    
+}   
+ 
+// ============================================================
+// Pārbauda, vai solījums ir īsts.
+//
+// Īstie solījumi ir:
+//    1C ... 7NT
+//
+// Par īstiem solījumiem neuzskata:
+//    PASS
+//    X
+//    XX
+// ============================================================
+
+function irIstaisSolijums(solijums) {
+
+    if (solijums == "PASS") return false;
+    if (solijums == "X")    return false;
+    if (solijums == "XX")   return false;
+
+    return true;
+}
+//------------------------
+function irPretinieks(p1, p2) {
+    if (p1 == "N" && (p2 == "E" || p2 == "W")) return true;
+    if (p1 == "S" && (p2 == "E" || p2 == "W")) return true;
+    if (p1 == "E" && (p2 == "N" || p2 == "S")) return true;
+    if (p1 == "W" && (p2 == "N" || p2 == "S")) return true;
+
+    return false;
+}
 // ----------------------------------
 function solRekontraAtlauta() {
     // lasa biddingInput
