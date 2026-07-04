@@ -3,7 +3,11 @@
 // Bridža noteikumu pārbaudes.
 // Šeit nosaka, vai konkrēta darbība ir atļauta vai aizliegta.
 // Šis fails pats neko nedara ar FACTS — tikai dod jā/nē un paskaidrojumu.
-// 
+//      Funkciju prefiksi ieteimie:
+// pre → viss pirms solīšanas
+// sol → solīšana
+// isz → izspēle
+// pos → viss pēc izspēles
 
 function preVarTuksaIzdale() {
   if (facts.status === STATUS.EMPTY) {
