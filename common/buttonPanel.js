@@ -6,7 +6,7 @@
 
 //=========================================
 const BUTTONS_TITLE = {
-  nosaukums: "JAUNA SPĒLE?",
+  nosaukums: "JAUNA SPĒLE???",
    pogas: [
 
      {
@@ -179,13 +179,14 @@ function renderButtonPanel(buttonSet) {
   statuss.className = "button-status";
 
   //-------- solīšanas procesa attēls -----
-    let teksts = "-";
+   let teksts = "-";
    if (biddingInput.callType == "BID") {
     teksts = (biddingInput.level || "") + (biddingInput.suit || "");
   }
   if (biddingInput.callType == "PASS") teksts = "PASS";
   if (biddingInput.callType == "X") teksts = "X";
   if (biddingInput.callType == "XX") teksts = "XX";
+  
   statuss.textContent ="Sola " + biddingInput.player + ": " + teksts;
   
   //---
