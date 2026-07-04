@@ -49,14 +49,13 @@ function renderProtocolPanel() {
     const logs = document.getElementById("protocolPanel");
 
     if (!logs) return;
-    let teksts = "";
+  
+    let teksts = "PROTOKOLS\n\n";
+  
     for (const solijums of facts.bids) {
-        teksts +=
-            solijums.player +
-            " " +
-            solijums.solijums +
-            "\n";
+        teksts += solijums.player + " " + solijums.solijums + "\n";
     }
+
     logs.textContent = teksts;
 } 
 
