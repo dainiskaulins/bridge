@@ -96,26 +96,26 @@ const BUTTONS_PLAY = {
   nosaukums: "IZSPĒLE",
 
   pogas: [
-    { id:"BTN_PLAY_C", teksts:"♣", funkcija:"", klase:"poga-zala", rinda:1 },
-    { id:"BTN_PLAY_D", teksts:"♦", funkcija:"", klase:"poga-zala", rinda:1 },
-    { id:"BTN_PLAY_H", teksts:"♥", funkcija:"", klase:"poga-zala", rinda:1 },
-    { id:"BTN_PLAY_S", teksts:"♠", funkcija:"", klase:"poga-zala", rinda:1 },
-       
-    { id:"BTN_PLAY_A", teksts:"A", funkcija:"", klase:"poga-zala", rinda:2 },
-    { id:"BTN_PLAY_K", teksts:"K", funkcija:"", klase:"poga-zala", rinda:2 },
-    { id:"BTN_PLAY_Q", teksts:"Q", funkcija:"", klase:"poga-zala", rinda:2 },
-    { id:"BTN_PLAY_J", teksts:"J", funkcija:"", klase:"poga-zala", rinda:2 },
-    { id:"BTN_PLAY_T", teksts:"T", funkcija:"", klase:"poga-zala", rinda:2 },
-    { id:"BTN_PLAY_9", teksts:"9", funkcija:"", klase:"poga-zala", rinda:2 },
-    { id:"BTN_PLAY_8", teksts:"8", funkcija:"", klase:"poga-zala", rinda:2 },
-    { id:"BTN_PLAY_7", teksts:"7", funkcija:"", klase:"poga-zala", rinda:2 },
-    { id:"BTN_PLAY_6", teksts:"6", funkcija:"", klase:"poga-zala", rinda:2 },
-    { id:"BTN_PLAY_5", teksts:"5", funkcija:"", klase:"poga-zala", rinda:2 },
-    { id:"BTN_PLAY_4", teksts:"4", funkcija:"", klase:"poga-zala", rinda:2 },
-    { id:"BTN_PLAY_3", teksts:"3", funkcija:"", klase:"poga-zala", rinda:2 },
-    { id:"BTN_PLAY_2", teksts:"2", funkcija:"", klase:"poga-zala", rinda:2 },
+    { id:"BTN_PLAY_C", teksts:"♣", funkcija:"playButtonClick", parametrs:"C", klase:"poga-zala", rinda:1 },
+    { id:"BTN_PLAY_D", teksts:"♦", funkcija:"playButtonClick", parametrs:"D", klase:"poga-zala", rinda:1 },
+    { id:"BTN_PLAY_H", teksts:"♥", funkcija:"playButtonClick", parametrs:"H", klase:"poga-zala", rinda:1 },
+    { id:"BTN_PLAY_S", teksts:"♠", funkcija:"playButtonClick", parametrs:"S", klase:"poga-zala", rinda:1 },
+    
+    { id:"BTN_PLAY_A", teksts:"A", funkcija:"playButtonClick", parametrs:"A", klase:"poga-zala", rinda:2 },
+    { id:"BTN_PLAY_K", teksts:"K", funkcija:"playButtonClick", parametrs:"K", klase:"poga-zala", rinda:2 },
+    { id:"BTN_PLAY_Q", teksts:"Q", funkcija:"playButtonClick", parametrs:"Q", klase:"poga-zala", rinda:2 },
+    { id:"BTN_PLAY_A", teksts:"J", funkcija:"playButtonClick", parametrs:"J", klase:"poga-zala", rinda:2 },
+    { id:"BTN_PLAY_K", teksts:"T", funkcija:"playButtonClick", parametrs:"T", klase:"poga-zala", rinda:2 },
+    { id:"BTN_PLAY_Q", teksts:"9", funkcija:"playButtonClick", parametrs:"9", klase:"poga-zala", rinda:2 },
+    { id:"BTN_PLAY_A", teksts:"8", funkcija:"playButtonClick", parametrs:"8", klase:"poga-zala", rinda:2 },
+    { id:"BTN_PLAY_K", teksts:"7", funkcija:"playButtonClick", parametrs:"7", klase:"poga-zala", rinda:2 },
+    { id:"BTN_PLAY_Q", teksts:"6", funkcija:"playButtonClick", parametrs:"6", klase:"poga-zala", rinda:2 },
+    { id:"BTN_PLAY_A", teksts:"5", funkcija:"playButtonClick", parametrs:"5", klase:"poga-zala", rinda:2 },
+    { id:"BTN_PLAY_K", teksts:"4", funkcija:"playButtonClick", parametrs:"4", klase:"poga-zala", rinda:2 },
+    { id:"BTN_PLAY_Q", teksts:"3", funkcija:"playButtonClick", parametrs:"3", klase:"poga-zala", rinda:2 },  
+    { id:"BTN_PLAY_Q", teksts:"2", funkcija:"playButtonClick", parametrs:"2", klase:"poga-zala", rinda:2 },  
 
-    { id:"BTN_PLAY", teksts:"IZSPĒLE", funkcija:"", klase:"poga-zala", rinda:3 },
+    { id:"BTN_PLAY", teksts:"IZSPĒLE", funkcija:"playExecuteButtonClick", klase:"poga-zala", rinda:3 },
     { id:"BTN_PLAY_MENU", teksts:"IZVĒLNE", funkcija:"showTitle", klase:"poga-dzeltena", rinda:3 }
    ]
 };
