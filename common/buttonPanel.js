@@ -178,17 +178,30 @@ function renderButtonPanel(buttonSet) {
   statuss.id = "buttonStatus";
   statuss.className = "button-status";
 
-  // if BIDDING
-  //-------- solīšanas procesa attēls -----
-   let teksts = "-";
-   if (biddingInput.callType == "BID") {
-    teksts = (biddingInput.level || "") + (biddingInput.suit || "");
-  }
-  if (biddingInput.callType == "PASS") teksts = "PASS";
-  if (biddingInput.callType == "X") teksts = "X";
-  if (biddingInput.callType == "XX") teksts = "XX";
+  // -----if BIDDING
+  if (facts.status != "BIDDING") {
+     //-------- solīšanas procesa attēls -----
+     let teksts = "-";
+     if (biddingInput.callType == "BID") {
+      teksts = (biddingInput.level || "") + (biddingInput.suit || "");
+    }
+    if (biddingInput.callType == "PASS") teksts = "PASS";
+    if (biddingInput.callType == "X") teksts = "X";
+    if (biddingInput.callType == "XX") teksts = "XX";
   
-  statuss.textContent ="Sola " + biddingInput.player + ": " + teksts;
+    statuss.textContent ="Sola " + biddingInput.player + ": " + teksts;
+  }
+  
+  // -----if PLAYING
+  if (facts.status != "PLAYING") {
+  //-------- solīšanas procesa attēls -----
+     let teksts = "-";
+    // if (biddingInput.callType == "BID") {
+    //  teksts = (biddingInput.level || "") + (biddingInput.suit || "");
+  }
+   
+     statuss.textContent ="Spēlē " + playInput.player + ": " + teksts;
+  }
   
   //---
   panelis.appendChild(statuss);
