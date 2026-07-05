@@ -178,8 +178,8 @@ function renderButtonPanel(buttonSet) {
   statuss.id = "buttonStatus";
   statuss.className = "button-status";
 
-  // -----if BIDDING
-  if (facts.status != "BIDDING") {
+  // -----ja BIDDING
+  if (facts.status ==== "BIDDING") {
      //-------- solīšanas procesa attēls -----
      let teksts = "-";
      if (biddingInput.callType == "BID") {
@@ -192,14 +192,12 @@ function renderButtonPanel(buttonSet) {
     statuss.textContent ="Sola " + biddingInput.player + ": " + teksts;
   }
   
-  // -----if PLAYING
-  if (facts.status != "PLAYING") {
-  //-------- solīšanas procesa attēls -----
-     let teksts = "-";
-    // if (biddingInput.callType == "BID") {
-    //  teksts = (biddingInput.level || "") + (biddingInput.suit || "");
-     
-     statuss.textContent ="Spēlē " + playInput.player + ": " + teksts;
+  // ----- ja PLAYING -----
+  if (facts.status === "PLAYING") {
+    const suit = playInput.suit || "-";
+    const rank = playInput.rank || "-";
+
+    statuss.textContent = "Spēlē " + playInput.player + ": " + suit + rank;
   }
   
   //---
