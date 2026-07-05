@@ -181,7 +181,7 @@ function renderButtonPanel(buttonSet) {
 
   // -----ja BIDDING
   if (facts.status === "BIDDING") {
-     console.log("BIDDING irrr.....");
+     console.log("BIDDING irrr...irrr..");
      //-------- solīšanas procesa attēls -----
      let teksts = "-";
      if (biddingInput.callType == "BID") {
