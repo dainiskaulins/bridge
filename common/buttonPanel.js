@@ -164,7 +164,7 @@ function renderButtonPanel(buttonSet) {
 
   panelis.innerHTML = "";
   
-    // ----- paneļa virsraksts ----- 
+  // ----- paneļa virsraksts ----- 
   const virsraksts = document.createElement("div");
   virsraksts.className = "button-panel-title";
   virsraksts.textContent = buttonSet.nosaukums;
@@ -180,6 +180,7 @@ function renderButtonPanel(buttonSet) {
 
   // -----ja BIDDING
   if (facts.status ==== "BIDDING") {
+     console.log("BIDDING irrr.....");
      //-------- solīšanas procesa attēls -----
      let teksts = "-";
      if (biddingInput.callType == "BID") {
@@ -194,6 +195,7 @@ function renderButtonPanel(buttonSet) {
   
   // ----- ja PLAYING -----
   if (facts.status === "PLAYING") {
+    console.log("PLAYING irrr.....");
     const suit = playInput.suit || "-";
     const rank = playInput.rank || "-";
 
