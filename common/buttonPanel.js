@@ -163,19 +163,8 @@ function renderButtonPanel(buttonSet) {
   if (!panelis) return;
 
   panelis.innerHTML = "";
-  // ???####(((( ????
-  renderButtonPanelTitle(panelis, buttonSet);
-  console.log("zīmē1");
-  renderButtonPanelStatus(panelis);
-  console.log("zīmē2");
-  renderButtonRows(panelis, buttonSet);
-  console.log("zīmē3");
-}
-
-
- //------------------
-  //??????????????????
-  // ----- paneļa virsraksts ----- 
+  
+    // ----- paneļa virsraksts ----- 
   const virsraksts = document.createElement("div");
   virsraksts.className = "button-panel-title";
   virsraksts.textContent = buttonSet.nosaukums;
@@ -189,6 +178,7 @@ function renderButtonPanel(buttonSet) {
   statuss.id = "buttonStatus";
   statuss.className = "button-status";
 
+  // if BIDDING
   //-------- solīšanas procesa attēls -----
    let teksts = "-";
    if (biddingInput.callType == "BID") {
