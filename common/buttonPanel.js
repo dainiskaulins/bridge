@@ -230,7 +230,6 @@ function renderButtonPanel(buttonSet) {
         rinda3.appendChild(btn);
    } 
 }
-  
     panelis.appendChild(rinda1);
     panelis.appendChild(rinda2);
     panelis.appendChild(rinda3);
