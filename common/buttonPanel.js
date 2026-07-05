@@ -198,8 +198,7 @@ function renderButtonPanel(buttonSet) {
      let teksts = "-";
     // if (biddingInput.callType == "BID") {
     //  teksts = (biddingInput.level || "") + (biddingInput.suit || "");
-  }
-   
+     
      statuss.textContent ="Spēlē " + playInput.player + ": " + teksts;
   }
   
