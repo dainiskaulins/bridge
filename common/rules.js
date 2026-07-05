@@ -274,13 +274,73 @@ function irIstaisSolijums(solijums) {
     return true;
 }
 
-// ----------------------------------
+// ============================================================
+// Pārbauda, vai rekontra ir atļauta.
+//
+// Izmanto tikai pēdējos trīs solījumus.
+//
+// Rekontra atļauta:
+//
+// 1) Ja pēdējais (-1) ir X.
+//
+// 2) Ja trešais no beigām (-3) ir X,
+//    bet abi nākamie (-2 un -1) ir PASS.
+//
+// Visos pārējos gadījumos rekontra nav atļauta.
+// ============================================================
+
 function solRekontraAtlauta() {
-    // lasa biddingInput
-    // lasa facts
-   return {
-        ok: true,
-        message: ""
+
+    // Pārbauda tikai XX.
+    if (biddingInput.callType != "XX") {
+        return {
+            ok: true,
+            message: ""
+        };
+    }
+
+    let n = facts.bids.length;
+
+    let A = (n >= 3) ? facts.bids[n - 3] : null;
+    let B = (n >= 2) ? facts.bids[n - 2] : null;
+    let C = (n >= 1) ? facts.bids[n - 1] : null;
+
+    // ---------------------------------------------
+    // 1. variants.
+    // Pēdējais solījums ir X.
+    // ---------------------------------------------
+    if (C != null) {
+        if (C.solijums == "X") {
+            return {
+                ok: true,
+                message: ""
+            };
+        }
+    }
+
+    // ---------------------------------------------
+    // 2. variants.
+    // X, PASS, PASS.
+    // ---------------------------------------------
+    if (A != null) {
+        if (A.solijums == "X") {
+            if (B != null && B.solijums == "PASS") {
+                if (C != null && C.solijums == "PASS") {
+                    return {
+                        ok: true,
+                        message: ""
+                    };
+                }
+            }
+        }
+    }
+
+    // ---------------------------------------------
+    // Rekontra nav atļauta.
+    // ---------------------------------------------
+    return {
+        ok: false,
+        message: "Rekontra nav atļauta."
     };
 }
 
