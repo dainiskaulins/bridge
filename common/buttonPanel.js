@@ -192,6 +192,8 @@ function renderButtonPanel(buttonSet) {
     if (biddingInput.callType == "XX") teksts = "XX";
   
     statuss.textContent ="Sola " + biddingInput.player + ": " + teksts;
+  // pagaidu temporary NEPAREIZIIIIIIIIIII
+    playInput.player = biddingInput.player
   }
   
   // ----- ja PLAYING -----
