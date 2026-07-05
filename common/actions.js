@@ -56,6 +56,25 @@ let biddingInput = {
     suit: null       // "C", "D", "H", "S", "NT"
 };
 
+// --- Izspēles globālais darba objekts --------------------
+//
+// Satur pašlaik veidojamo gājienu.
+//
+// Šis NAV FACTS.
+// Kamēr nav nospiesta poga IZSPĒLE,
+// lietotājs drīkst mainīt visas vērtības.
+//
+// Pēc pogas IZSPĒLE no playInput tiek izveidots
+// gājiena ieraksts, kas tiek pievienots FACTS.
+// Pēc tam playInput tiek inicializēts nākamajam gājienam.
+// -----------------------------------------------------------
+
+let playInput = {
+    player: null,    // "N", "E", "S", "W"
+    suit: null,      // "C", "D", "H", "S"
+    rank: null       // "A", "K", ..., "2"
+};
+
 // ============================================================
 // Solīšanas pogu galvenā funkcija.
 //
