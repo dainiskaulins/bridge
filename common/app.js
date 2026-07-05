@@ -87,7 +87,6 @@ function renderAll() {
     else if (facts.status === "FINISH") renderButtonPanel(BUTTONS_FINISH);
     else renderButtonPanel(BUTTONS_TITLE);
   
-    renderButtonPanel(BUTTONS_BIDDING);
     renderTablePanel();
     renderProtocolPanel();
     renderFactsPanel();
