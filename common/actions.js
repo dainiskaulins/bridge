@@ -81,8 +81,15 @@ function biddingButtonClick(value) {
     console.log(biddingInput);
 
     let result = { ok:true, message:"", refresh:true };
-    
-    // ----------------------------------------------------
+
+    if (facts.status != "BIDDING") {
+       result.ok = false;
+       result.message = "Solīšana vairs nenotiek.";
+       result.refresh = false;
+       return result;
+    }
+
+   // ----------------------------------------------------
     // Solījuma līmenis
     // ----------------------------------------------------
     if (["1","2","3","4","5","6","7"].includes(value)) {
