@@ -6,6 +6,29 @@
 // Šeit ģenerē izdali, pievieno solījumu, izspēlē kārti, anulē pēdējo darbību.
 // Pirms izmaiņām darbības izmanto rules.js pārbaudes.
 
+// ======================================================
+// playButtonClick(card)
+// Izspēles pogas nospiešana.
+// Pagaidām tikai reģistrē nospiesto kārti.
+// ======================================================
+function playButtonClick(card) {
+
+    console.log("Play:", card);
+// negatavs !!!!!!!!!!!!!!!!!!!!!!!!!!!
+    if (!playLegal(card)) return;
+
+       playCard(card);
+
+       renderAll();
+
+    facts.plays.push({
+        card: card
+    });
+
+    enderAll();
+}
+
+// dzēš izdali - ģenerē tukšu.
 function tuksaIzdale() {
   facts.status = "EMPTY";
   facts.hands = { N: [], E: [], S: [], W: [] };
