@@ -157,7 +157,7 @@ function izsauktPogasFunkciju(poga) {
 function renderButtonPanel(buttonSet) {
   console.log("sākam renderButtonPanel");
   console.log("facts.status: " + facts.status);
-  console.log(buttonSet.nosaukums);
+  console.log("buttonSet.nosaukums: " + buttonSet.nosaukums);
   console.log(buttonSet);
   
   const panelis = document.getElementById("buttonPanel");
