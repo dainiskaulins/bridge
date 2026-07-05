@@ -55,6 +55,34 @@ let playInput = {
 };
 
 //=========================================
+// playExecuteButtonClick()
+//
+// Apstrādā pogu IZSPĒLE.
+//
+// Šeit vēlāk būs pārbaudes:
+// - vai izvēlēts masts;
+// - vai izvēlēta kārts;
+// - vai spēlētājam šī kārts ir;
+// - vai gājiens ir legāls.
+//
+// Pagaidām funkcija tikai paziņo,
+// ka poga IZSPĒLE ir nospiesta.
+//=========================================
+function playExecuteButtonClick() {
+
+    console.log("Nospiesta poga IZSPĒLE");
+    console.log(playInput);
+
+    return {
+        ok: true,
+        message: "IZSPĒLE nospiesta.",
+        refresh: true
+    };
+}
+
+
+
+//=========================================
 // playButtonClick(value)
 //
 // Apstrādā izspēles pogu nospiešanu.
