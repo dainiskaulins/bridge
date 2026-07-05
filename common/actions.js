@@ -62,9 +62,9 @@ let playInput = {
 // ======================================================
 function playButtonClick(card) {
 
-    console.log("Play:", card);
+    console.log("Play: playButtonClick", card);
 // negatavs !!!!!!!!!!!!!!!!!!!!!!!!!!!
-    if (!playLegal(card)) return;
+//    if (!playLegal(card)) return;
 
        playCard(card);
 
@@ -74,7 +74,7 @@ function playButtonClick(card) {
         card: card
     });
 
-    enderAll();
+    renderAll();
 }
 
 // ============================================================
