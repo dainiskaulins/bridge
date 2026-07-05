@@ -54,27 +54,59 @@ let playInput = {
     rank: null       // "A", "K", ..., "2"
 };
 
-// ======================================================
-// iaspēles pogu galvenā funkcija.
-// playButtonClick(card)
-// Izspēles pogas nospiešana.
-// Pagaidām tikai reģistrē nospiesto kārti.
-// ======================================================
-function playButtonClick(card) {
+//=========================================
+// playButtonClick(value)
+//
+// Apstrādā izspēles pogu nospiešanu.
+//
+// Atceras lietotāja izvēlēto mastu vai kārti.
+// Faktiskais gājiens tiek veikts tikai pēc
+// pogas IZSPĒLE (playExecuteButtonClick).
+//=========================================
+function playButtonClick(value) {
 
-    console.log("Play: playButtonClick", card);
-// negatavs !!!!!!!!!!!!!!!!!!!!!!!!!!!
-//    if (!playLegal(card)) return;
+    console.log("Izspēles poga: " + value);
+    console.log("Spēlē: " + playInput.player);
+    console.log(playInput);
 
-       playCard(card);
+    let result = { ok:true, message:"", refresh:true };
 
-       renderAll();
+    if (facts.status != "PLAYING") {
+        result.ok = false;
+        result.message = "Izspēle pašlaik nenotiek.";
+        result.refresh = false;
+        return result;
+    }
 
-    facts.plays.push({
-        card: card
-    });
+    // ----------------------------------------------------
+    // Masts
+    // ----------------------------------------------------
+    if (["C","D","H","S"].includes(value)) {
+        playInput.suit = value;
+    }
 
-    renderAll();
+    // ----------------------------------------------------
+    // Kārts
+    // ----------------------------------------------------
+    if (["A","K","Q","J","T","9","8","7","6","5","4","3","2"].includes(value)) {
+        playInput.rank = value;
+    }
+
+    // ----------------------------------------------------
+    // Nepazīstama poga
+    // ----------------------------------------------------
+    if (
+        !["C","D","H","S",
+          "A","K","Q","J","T","9","8","7","6","5","4","3","2"].includes(value)
+    ) {
+        result.ok = false;
+        result.message = "playButtonClick(): nepazīstama poga: " + value;
+        result.refresh = false;
+        return result;
+    }
+
+    console.log(playInput);
+    return result;
 }
 
 // ============================================================
