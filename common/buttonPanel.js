@@ -196,7 +196,7 @@ function renderButtonPanel(buttonSet) {
   
   // ----- ja PLAYING -----
   if (facts.status === "PLAYING") {
-    console.log("PLAYING irrr.....");
+    console.log("PLAYING irrr..kkkk...");
     const suit = playInput.suit || "-";
     const rank = playInput.rank || "-";
 
