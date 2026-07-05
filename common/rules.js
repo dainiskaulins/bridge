@@ -344,5 +344,73 @@ function solRekontraAtlauta() {
     };
 }
 
+// ============================================================
+// Pārbauda, vai pēc pēdējā legālā solījuma solīšana ir beigusies.
+//
+// Atgriež:
+// {
+//     finished : true | false,
+//     message  : "..."
+// }
+// ============================================================
+function solParbauditBeigas() {
+    let r;
+    r = solVaiBeidzasAr4Pass();
+    if (r.finished) return r;
+
+    r = solVaiBeidzasAr3Pass();
+    if (r.finished) return r;
+
+    return {
+        finished: false,
+        message: ""
+    };
+}
+//-----------------------------
+function solVaiBeidzasAr4Pass() {
+
+    if (facts.bids.length != 4) {
+        return { finished: false, message: "" };
+    }
+
+    for (const b of facts.bids) {
+        if (b.solijums != "PASS") {
+            return { finished: false, message: "" };
+        }
+    }
+
+    facts.status = "FINISHED";
+
+    return {
+        finished: true,
+        message: "Visi pasēja. Neviens nav solījis. Nākamā dalīšana."
+    };
+}
+
+//--------------------------------------
+function solVaiBeidzasAr3Pass() {
+
+    if (facts.bids.length < 4) {
+        return { finished: false, message: "" };
+    }
+
+    const n = facts.bids.length;
+
+    if (
+        facts.bids[n - 1].solijums == "PASS" &&
+        facts.bids[n - 2].solijums == "PASS" &&
+        facts.bids[n - 3].solijums == "PASS"
+    ) {
+        facts.status = "PLAYING";
+
+        return {
+            finished: true,
+            message: "Solīšana beigusies. Jāsāk izspēle."
+        };
+    }
+
+    return { finished: false, message: "" };
+}
+
 //-----------------------
 console.log("common/rules.js ielādēts");
