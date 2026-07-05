@@ -64,9 +64,18 @@ let playInput = {
 // - vai izvēlēta kārts;
 // - vai spēlētājam šī kārts ir;
 // - vai gājiens ir legāls.
-//
+// TBD: 
+// 1. Vai status ir PLAYING?
+// 2. Vai izvēlēts masts?
+// 3. Vai izvēlēta kārts?
+//  -- SASTĀDA KĀRTI - TAS JAU IR --
+// 5. Ieraksta facts.plays:
+// 6. Notīra playInput.suit un playInput.rank
+// 7. Pārceļ player uz nākamo
+// 8. Pārzīmē ekrānu
+//----?
 // Pagaidām funkcija tikai paziņo,
-// ka poga IZSPĒLE ir nospiesta.
+// ka poga IZSPĒLE ir nospiesta, IERAKSTA.
 //=========================================
 function playExecuteButtonClick() {
 
@@ -76,7 +85,6 @@ function playExecuteButtonClick() {
     // ----------------------------------------------------
     // Ieraksta gājienu FACTS
     // ----------------------------------------------------
-
     facts.plays.push({
         player: playInput.player,
         card: playInput.suit + playInput.rank
