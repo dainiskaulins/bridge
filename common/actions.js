@@ -72,7 +72,16 @@ function playExecuteButtonClick() {
 
     console.log("Nospiesta poga IZSPĒLE");
     console.log(playInput);
+    
+    // ----------------------------------------------------
+    // Ieraksta gājienu FACTS
+    // ----------------------------------------------------
 
+    facts.plays.push({
+        player: playInput.player,
+        card: playInput.suit + playInput.rank
+    });
+  
     return {
         ok: true,
         message: "IZSPĒLE nospiesta.",
