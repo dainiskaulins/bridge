@@ -162,11 +162,24 @@ function biddingButtonClick(value) {
         solijums = biddingInput.callType;
     }
 
+    // 1. Ierakstām legālu solījumu FACTS.  
     facts.bids.push({
         player: biddingInput.player,
         solijums: solijums
     });
-    // -------nākošais solītājs -----
+      
+    // 2. Pārbauda, vai solīšana ir beigusies.
+    let r = solParbauditBeigas();
+
+    // te vēl varētu būt kontrakta noteikšana TBD
+      
+    if (r.finished) {
+        result.message = r.message;
+        result.refresh = true;
+        return result;
+    } 
+      
+    // 3. Solīšana turpinās. Sagatavo nākamo solītāju.
     biddingInput.player = nakamaisSpeletajs(biddingInput.player);
     biddingInput.callType = null;
     biddingInput.level = null;
