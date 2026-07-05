@@ -180,7 +180,7 @@ function renderButtonPanel(buttonSet) {
   statuss.className = "button-status";
 
   // -----ja BIDDING
-  if (facts.status ==== "BIDDING") {
+  if (facts.status === "BIDDING") {
      console.log("BIDDING irrr.....");
      //-------- solīšanas procesa attēls -----
      let teksts = "-";
