@@ -81,6 +81,12 @@ function generetIzdali() {
 
 function renderAll() {
     renderTitlePanel();
+    // -----zīmē -----
+    if (facts.status === "BIDDING") renderButtonPanel(BUTTONS_BIDDING);
+    else if (facts.status === "PLAYING") renderButtonPanel(BUTTONS_PLAY);
+    else if (facts.status === "FINISH") renderButtonPanel(BUTTONS_FINISH);
+    else renderButtonPanel(BUTTONS_TITLE);
+  
     renderButtonPanel(BUTTONS_BIDDING);
     renderTablePanel();
     renderProtocolPanel();
