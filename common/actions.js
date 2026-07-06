@@ -55,6 +55,17 @@ let playInput = {
 };
 
 //=========================================
+// Izveido tukšu funkcijas rezultātu.
+// Lieto darbību (action) funkcijas.
+//=========================================
+function emptyResult() {
+    return {
+        ok: true,
+        message: "",
+        refresh: true
+    };
+}
+//=========================================
 // playExecuteButtonClick()
 //=========================================
 //
@@ -79,6 +90,7 @@ function playExecuteButtonClick() {
 
     console.log("Nospiesta poga IZSPĒLE");
     console.log(playInput);
+    let result = emptyResult();
 
     // Drošības pārbaude. Normālā darbībā šeit nekad nevajadzētu nonākt.
     if (facts.status != "PLAYING") {
@@ -141,8 +153,8 @@ function playButtonClick(value) {
     console.log("Izspēles poga: " + value);
     console.log("Spēlē: " + playInput.player);
     console.log(playInput);
-
-    let result = { ok:true, message:"", refresh:true };
+  
+    let result = emptyResult();
 
     if (facts.status != "PLAYING") {
         result.ok = false;
@@ -229,7 +241,7 @@ function biddingButtonClick(value) {
     console.log("Sola: " + biddingInput.player );
     console.log(biddingInput);
 
-    let result = { ok:true, message:"", refresh:true };
+    let result = emptyResult();  
 
     if (facts.status != "BIDDING") {
        result.ok = false;
