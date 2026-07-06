@@ -75,7 +75,7 @@ function renderProtocolPanel() {
 //   - FACTS
 //   - citus tehniskus datus
 // ============================================================
-function renderDebugPanel.() {
+function renderDebugPanel() {
     logs.textContent =
     "GAME STATE\n\n" +
     JSON.stringify(gameState, null, 2) +
