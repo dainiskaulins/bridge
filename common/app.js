@@ -90,7 +90,7 @@ function renderAll() {
   
     renderTablePanel();
     renderProtocolPanel();
-    renderFactsPanel();
+    renderDebugPanel();
 }
 
 function jaunaSpele() {
