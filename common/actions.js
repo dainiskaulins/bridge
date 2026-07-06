@@ -56,32 +56,56 @@ let playInput = {
 
 //=========================================
 // playExecuteButtonClick()
+//=========================================
 //
-// Apstrādā pogu IZSPĒLE.
-//
-// Šeit vēlāk būs pārbaudes:
-// - vai izvēlēts masts;
-// - vai izvēlēta kārts;
-// - vai spēlētājam šī kārts ir;
-// - vai gājiens ir legāls.
-// TBD: 
-// 1. Vai status ir PLAYING?
-// 2. Vai izvēlēts masts?
-// 3. Vai izvēlēta kārts?
-//  -- SASTĀDA KĀRTI - TAS JAU IR --
-// 5. Ieraksta facts.plays:
-// 6. Notīra playInput.suit un playInput.rank
-// 7. Pārceļ player uz nākamo
-// 8. Pārzīmē ekrānu
-//----?
-// Pagaidām funkcija tikai paziņo,
-// ka poga IZSPĒLE ir nospiesta, IERAKSTA.
+// Apstrādā pogu IZSPĒLE: veic lietotāja izvēlēto gājienu.
+// Pārbauda gājiena pareizību, ja gājiens ir legāls, ieraksta to FACTS,
+// 
+// Darbību secība:
+// 1. Pārbauda, vai izspēle notiek.
+// 2. Pārbauda, vai izvēlēts masts.
+// 3. Pārbauda, vai izvēlēta kārts.
+// 4. Nosaka spēlētāja situāciju:
+//      - pirmais stiķī?
+//      - prasītais masts?
+// 5. Pārbauda, vai kārts ir rokā.
+// 6. Pārbauda bridža noteikumus.
+// 7. Ieraksta gājienu FACTS.
+// 8. Sagatavo nākamo spēlētāju.
+// 9. Pārrēķina gameState.
+// 10. Pārzīmē ekrānu.
 //=========================================
 function playExecuteButtonClick() {
 
     console.log("Nospiesta poga IZSPĒLE");
     console.log(playInput);
-    
+
+    // Drošības pārbaude. Normālā darbībā šeit nekad nevajadzētu nonākt.
+    if (facts.status != "PLAYING") {
+        result.ok = false;
+        result.message = "Izspēle pašlaik nenotiek.";
+        result.refresh = false;
+        return result;
+    }
+   // ----------------------------------------------------
+   // Vai izvēlēts masts?
+   // ----------------------------------------------------
+   if (playInput.suit == null) {
+       result.ok = false;
+       result.message = "Nav izvēlēts masts.";
+       result.refresh = false;
+       return result;
+    }
+    // ---------------------------------------------------- 
+    // Vai izvēlēta kārts?
+    // ----------------------------------------------------
+    if (playInput.rank == null) {
+        result.ok = false;
+        result.message = "Nav izvēlēta kārts.";
+        result.refresh = false;
+        return result;
+    }
+  
     // ----------------------------------------------------
     // Ieraksta gājienu FACTS
     // ----------------------------------------------------
