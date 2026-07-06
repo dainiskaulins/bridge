@@ -113,17 +113,18 @@ function playExecuteButtonClick() {
     // ----------------------------------------------------
     facts.plays.push({
         player: playInput.player,
-        card: playInput.suit + playInput.rank
+        card: playInput.suit + playInput.rank,
+        trick: gameState.play.trick
     });
+  
+    // Pārrēķina spēles stāvokli.
+    calculateGameState();
   
     return {
         ok: true,
         message: "IZSPĒLE nospiesta.",
         refresh: true
     };
-
-    // 2. Pārrēķina spēles stāvokli.
-    calculateGameState();
 }
 
 //=========================================
@@ -323,10 +324,13 @@ function biddingButtonClick(value) {
         solijums: solijums
     });
       
-    // 2. Pārbauda, vai solīšana ir beigusies.
+    // Vienmēr pēc FACTS izmaiņām.
+    calculateGameState();
+      
+    // Pārbauda, vai solīšana ir beigusies.
     let r = solParbauditBeigas();
-
-    // te vēl varētu būt kontrakta noteikšana TBD
+       
+    // nevajag ???? te vēl varētu būt kontrakta noteikšana TBD
       
     if (r.finished) {
         result.message = r.message;
