@@ -52,7 +52,9 @@ let gameState = {
     //-----------------------------------------------------
     play: {
 
-        trick: null,     // stiķa izspēles numurs 
+        trick: null,          // izspēles stiķa numurs 
+        position: null,       // 1..4, kura kārts stiķī
+        requiredSuit: null    // "C","D","H","S" vai null, ja pirmais stiķī
         // leader: null,
         // currentPlayer: null,
         // requiredSuit: null,
@@ -108,6 +110,10 @@ function calculateGameState() {
     
     // Izspēles stiķa numurs
     gameState.play.trick = gsCalculateCurrentTrick();
+    // 1..4, kura kārts stiķī
+    gameState.play.position = gsCalculateCurrentTrickPosition();
+    // "C","D","H","S", vai null, ja pirmais stiķī
+    gameState.play.requiredSuit = gsCalculateRequiredSuit();
     
     // te būs citi lauki arī
 
@@ -123,5 +129,35 @@ function gsCalculateCurrentTrick() {
     return Math.floor(facts.plays.length / 4) + 1;
 }
 
+//=========================================================
+// Aprēķina, kura kārts pašlaik tiks spēlēta stiķī.
+// Rezultāts: 1, 2, 3 vai 4.
+//=========================================================
+function gsCalculateCurrentTrickPosition() {
+
+    return (facts.plays.length % 4) + 1;
+
+}
+
+//=========================================================
+// Aprēķina prasīto mastu pašreizējā stiķī.
+//
+// Ja spēlētājs ir pirmais stiķī, prasītā masta nav.
+// Ja stiķī jau ir kārts, prasītais masts ir pirmās kārts masts.
+//=========================================================
+function gsCalculateRequiredSuit() {
+
+    const position = gsCalculateCurrentTrickPosition();
+
+    if (position === 1) {
+        return null;
+    }
+
+    const currentTrickStart = facts.plays.length - (position - 1);
+    const firstCard = facts.plays[currentTrickStart].card;
+
+    return firstCard[0];
+
+}
 
 console.log("common/gameState.js ielādēts");
