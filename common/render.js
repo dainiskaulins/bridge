@@ -63,17 +63,36 @@ function renderProtocolPanel() {
 } 
 
 // ============================================================
-// FACTS loga pārzīmēšana.
+// Tehniskā loga pārzīmēšana renderDebugPanel.
 //
-// Parāda visu FACTS objektu tehniskā veidā.
+// Parāda programmas iekšējos datus.
 // Domāts atkļūdošanai un testēšanai.
+//
+// Šeit var parādīt:
+//   - gameState
+//   - playInput
+//   - biddingInput
+//   - FACTS
+//   - citus tehniskus datus
 // ============================================================
-function renderFactsPanel() {
-    const logs = document.getElementById("logPanel");
-    if (!logs) return;
+function renderDebugPanel.() {
     logs.textContent =
-        "FACTS\n\n" +
-        JSON.stringify(facts, null, 2);
+    "GAME STATE\n\n" +
+    JSON.stringify(gameState, null, 2) +
+
+    "\n\n========================================\n\n" +
+  
+    "BIDDING INPUT\n\n" +
+    JSON.stringify(biddingInput, null, 2) +
+  
+    "\n\n========================================\n\n" +
+  
+    "PLAY INPUT\n\n" +
+    JSON.stringify(playInput, null, 2) +
+
+    "\n\n========================================\n\n" +  
+    "FACTS\n\n" +
+    JSON.stringify(facts, null, 2);
 }
 
 //=========================================================
