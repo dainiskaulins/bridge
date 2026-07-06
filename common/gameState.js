@@ -17,6 +17,10 @@
 // Ja mainās FACTS (SOLĪT, IZSPĒLE, BACK, IMPORT,
 // TESTI u.c.), gameState jāpārrēķina.
 //
+// Soteikums:
+// gsCalculate...() → nekad neraksta gameState.
+// calculateGameState() → vienīgā raksta gameState.
+//
 // Lauki sākumā var būt tukši vai aizkomentēti.
 // Tos pievieno tikai tad, kad tie kļūst vajadzīgi.
 //=========================================================
@@ -48,7 +52,7 @@ let gameState = {
     //-----------------------------------------------------
     play: {
 
-        // trick: null,
+        trick: null,     // stiķa izspēles numurs 
         // leader: null,
         // currentPlayer: null,
         // requiredSuit: null,
@@ -94,30 +98,29 @@ let gameState = {
 //=========================================================
 // Pārrēķina visu gameState no FACTS.
 //
-// Šī ir vienīgā funkcija,
-// kura drīkst mainīt gameState.
+// Šī ir vienīgā funkcija, kura drīkst mainīt gameState.
+// Aprēķina visus gameState laukus.
+// Katra apakšfunkcija parasti aprēķina vienu lauku un atgriež rezultātu.
 //=========================================================
 
 function calculateGameState() {
-
-    // Pagaidām nekā.
+    console.log("common/calculateGameState sāk strādāt!");
+    
+    // Izspēles stiķa numurs
+    gameState.play.trick = gsCalculateCurrentTrick();
+    
+    // te būs citi lauki arī
 
 }
 
-
 //=========================================================
-// Aprēķina vienu gameState lauku.
-//
-// Šis ir tikai piemērs.
+// Aprēķina vienu gameState lauku: stiķa numuru.
 //=========================================================
 
 function gsCalculateCurrentTrick() {
-
     // Katrā stiķī ir 4 kārtis.
     // Pirmais stiķis ir Nr.1.
-
     return Math.floor(facts.plays.length / 4) + 1;
-
 }
 
 
