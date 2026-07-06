@@ -87,6 +87,7 @@ function playExecuteButtonClick() {
         result.refresh = false;
         return result;
     }
+  
    // ----------------------------------------------------
    // Vai izvēlēts masts?
    // ----------------------------------------------------
@@ -96,6 +97,7 @@ function playExecuteButtonClick() {
        result.refresh = false;
        return result;
     }
+  
     // ---------------------------------------------------- 
     // Vai izvēlēta kārts?
     // ----------------------------------------------------
@@ -119,9 +121,10 @@ function playExecuteButtonClick() {
         message: "IZSPĒLE nospiesta.",
         refresh: true
     };
+
+    // 2. Pārrēķina spēles stāvokli.
+    calculateGameState();
 }
-
-
 
 //=========================================
 // playButtonClick(value)
