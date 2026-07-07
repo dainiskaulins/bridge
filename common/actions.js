@@ -130,15 +130,26 @@ function playExecuteButtonClick() {
     const trick = gameState.play.trick;
     const position = gameState.play.position;
     
-    // 2) Vai šī kārts ir spēlētāja rokā? tbd citādi!
+    // 2) Vai šī kārts bija spēlētāja rokā? tbd citādi!
     if (!facts.hands[player].includes(card)) {
         result.ok = false;
         result.message = "Šīs kārts spēlētāja rokā nav: " + card;
         result.refresh = false;
         return result;  
     }
+  // ----------------------------------------------------
+  // Vai šī kārts jau nav izspēlēta?
+  // ----------------------------------------------------
+  const alreadyPlayed = facts.plays.some(play => play.card === card);
 
-    // te vēlāk būs bridža noteikumi:
+  if (alreadyPlayed) {
+      result.ok = false;
+      result.message = "Šī kārts jau ir izspēlēta: " + card;
+      result.refresh = false;
+      return result;
+ }
+ 
+  // te vēlāk būs bridža noteikumi:
     // - ja position == 1, drīkst jebkuru kārti no rokas
     // - ja position > 1, jāpārbauda prasītais masts
     console.log("UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU");
