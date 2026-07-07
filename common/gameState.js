@@ -56,7 +56,7 @@ let gameState = {
         position: null,       // 1..4, kura kārts stiķī
         requiredSuit: null    // "C","D","H","S" vai null, ja pirmais stiķīs
         // leader: null,
-        currentPlayer: null,   // "S", "W", "N", "E"
+        currentPlayer: null   // "S", "W", "N", "E"
         // requiredSuit: null,
         // trickWinner: null
 
