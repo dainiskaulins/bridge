@@ -76,7 +76,7 @@ function renderProtocolPanel() {
 //   - citus tehniskus datus
 // ============================================================
 function renderDebugPanel() {
-    logs.textContent =
+    const logs.textContent =
     "GAME STATE\n\n" +
     JSON.stringify(gameState, null, 2) +
 
