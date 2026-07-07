@@ -80,7 +80,7 @@ function renderDebugPanel() {
    if (!logs) return;
    console.log("NU TAD NU GAN !!! common/renderDebugPanel 07-jul sākas");
   
-   logs.textContent =
+   let teksts =
   //  "GAME STATE\n\n" +
   //  JSON.stringify(gameState, null, 2) +
   //
@@ -93,10 +93,12 @@ function renderDebugPanel() {
   //
   //  "PLAY INPUT\n\n" +
   //  JSON.stringify(playInput, null, 2) +
-//
+  //
    // "\n\n========================================\n\n" +  
     "FACTS\n\n" +
     JSON.stringify(facts, null, 2);
+  
+  logs.textContent = teksts;
 }
 
 //=========================================================
