@@ -87,9 +87,10 @@ function emptyResult() {
 // 10. Pārzīmē ekrānu.
 //=========================================
 function playExecuteButtonClick() {
-
+    console.log("playExecuteButtonClick sākas");
     console.log("Nospiesta poga IZSPĒLE");
     console.log(playInput);
+  
     let result = emptyResult();
 
     // Drošības pārbaude. Normālā darbībā šeit nekad nevajadzētu nonākt.
@@ -114,12 +115,33 @@ function playExecuteButtonClick() {
     // Vai izvēlēta kārts?
     // ----------------------------------------------------
     if (playInput.rank == null) {
-        result.ok = false;
-        result.message = "Nav izvēlēta kārts.";
-        result.refresh = false;
-        return result;
+       result.ok = false;
+       result.message = "Nav izvēlēta kārts.";
+       result.refresh = false;
+       return result;
     }
-  
+      
+    // te notiek darbs NEPABEIGTS DARBS !!!!!!!!
+    const player = playInput.player;
+    const suit = playInput.suit;
+    const rank = playInput.rank;
+    const card = suit + rank;
+
+    const trick = gameState.play.trick;
+    const position = gameState.play.position;
+    
+    // 2) Vai šī kārts ir spēlētāja rokā? tbd citādi!
+    if (!facts.hands[player].includes(card)) {
+        result.ok = false;
+        result.message = "Šīs kārts spēlētāja rokā nav: " + card;
+        result.refresh = false;
+        return result;  
+    }
+
+    // te vēlāk būs bridža noteikumi:
+    // - ja position == 1, drīkst jebkuru kārti no rokas
+    // - ja position > 1, jāpārbauda prasītais masts
+    console.log("UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU");
     // ----------------------------------------------------
     // Ieraksta gājienu FACTS
     // ----------------------------------------------------
@@ -134,7 +156,7 @@ function playExecuteButtonClick() {
   
     return {
         ok: true,
-        message: "IZSPĒLE nospiesta.",
+        message: "Gājiens izspēlēts: " + player + " " + card,
         refresh: true
     };
 }
