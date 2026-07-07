@@ -80,10 +80,10 @@ function renderDebugPanel() {
    const logs = document.getElementById("logs");
   
    logs.textContent =
-    "GAME STATE\n\n" +
-    JSON.stringify(gameState, null, 2) +
-
-    "\n\n========================================\n\n" +
+  //  "GAME STATE\n\n" +
+  //  JSON.stringify(gameState, null, 2) +
+  //
+  //  "\n\n========================================\n\n" +
   
     "BIDDING INPUT\n\n" +
     JSON.stringify(biddingInput, null, 2) +
