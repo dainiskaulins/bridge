@@ -47,8 +47,7 @@ function renderTitlePanel() {
 // ============================================================
 function renderProtocolPanel() {
     console.log("common/renderProtocolPanel sākas");
-    console.log("???");
-  
+      
     const logs = document.getElementById("protocolPanel");
 
     if (!logs) return;
@@ -78,7 +77,8 @@ function renderProtocolPanel() {
 function renderDebugPanel() {
    console.log("common/renderDebugPanel 07-jul sākas");
    const logs = document.getElementById("logPanel");
-   if (!panelis) return;
+   if (!logs) return;
+   console.log("NU TAD NU GAN !!! common/renderDebugPanel 07-jul sākas");
   
    logs.textContent =
   //  "GAME STATE\n\n" +
