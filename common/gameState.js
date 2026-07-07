@@ -115,9 +115,10 @@ function calculateGameState() {
     // "C","D","H","S", vai null, ja pirmais stiķī
     gameState.play.requiredSuit = gsCalculateRequiredSuit();
 
-    // 
-    gameState.play.currentPlayer = gsCalculateCurrentPlayer()
-    
+    // nākošais spēlēt;ajs
+    const lastPlay = facts.plays[facts.plays.length - 1];
+    gameState.play.currentPlayer = nextSeat(lastPlay.player);
+        
     // te būs citi lauki arī
 
 }
@@ -148,6 +149,14 @@ function gsCalculateCurrentPlayer() {
 
     return "N";
 
+}
+//=========================================================
+function nextSeat(player) {
+    if (player == "S") return "W";
+    if (player == "W") return "N";
+    if (player == "N") return "E";
+    if (player == "E") return "S";
+    return null;
 }
 
 //=========================================================
