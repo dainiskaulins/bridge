@@ -76,6 +76,7 @@ function renderProtocolPanel() {
 //   - citus tehniskus datus
 // ============================================================
 function renderDebugPanel() {
+   console.log("common/renderDebugPanel 07-jul sākas");
    const logs = document.getElementById("logs");
   
    logs.textContent =
