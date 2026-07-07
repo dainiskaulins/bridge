@@ -56,7 +56,7 @@ let gameState = {
         position: null,       // 1..4, kura kārts stiķī
         requiredSuit: null    // "C","D","H","S" vai null, ja pirmais stiķīs
         // leader: null,
-        // currentPlayer: null,
+        currentPlayer: null,   // "S", "W", "N", "E"
         // requiredSuit: null,
         // trickWinner: null
 
@@ -114,6 +114,9 @@ function calculateGameState() {
     gameState.play.position = gsCalculateCurrentTrickPosition();
     // "C","D","H","S", vai null, ja pirmais stiķī
     gameState.play.requiredSuit = gsCalculateRequiredSuit();
+
+    // 
+    gameState.play.currentPlayer = gsCalculateCurrentPlayer()
     
     // te būs citi lauki arī
 
@@ -136,6 +139,14 @@ function gsCalculateCurrentTrick() {
 function gsCalculateCurrentTrickPosition() {
 
     return (facts.plays.length % 4) + 1;
+
+}
+//=========================================================
+// "S", "W", "N", "E"
+//=========================================================
+function gsCalculateCurrentPlayer() {
+
+    return "N";
 
 }
 
