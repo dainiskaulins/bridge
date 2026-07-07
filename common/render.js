@@ -76,9 +76,9 @@ function renderProtocolPanel() {
 //   - citus tehniskus datus
 // ============================================================
 function renderDebugPanel() {
-    const logs = document.getElementById("logs");
+   const logs = document.getElementById("logs");
   
-    const logs.textContent =
+   logs.textContent =
     "GAME STATE\n\n" +
     JSON.stringify(gameState, null, 2) +
 
