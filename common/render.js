@@ -81,20 +81,20 @@ function renderDebugPanel() {
    console.log("NU TAD NU GAN !!! common/renderDebugPanel 07-jul sākas");
   
    let teksts =
-  //  "GAME STATE\n\n" +
-  //  JSON.stringify(gameState, null, 2) +
-  //
-  //  "\n\n========================================\n\n" +
-  //
-  //  "BIDDING INPUT\n\n" +
-  //  JSON.stringify(biddingInput, null, 2) +
-  //
-  //  "\n\n========================================\n\n" +
-  //
-  //  "PLAY INPUT\n\n" +
-  //  JSON.stringify(playInput, null, 2) +
-  //
-   // "\n\n========================================\n\n" +  
+    "GAME STATE\n\n" +
+    JSON.stringify(gameState, null, 2) +
+  
+    "\n\n========================================\n\n" +
+  
+    "BIDDING INPUT\n\n" +
+    JSON.stringify(biddingInput, null, 2) +
+  
+    "\n\n========================================\n\n" +
+  
+    "PLAY INPUT\n\n" +
+    JSON.stringify(playInput, null, 2) +
+  
+    "\n\n========================================\n\n" +  
     "FACTS\n\n" +
     JSON.stringify(facts, null, 2);
   
