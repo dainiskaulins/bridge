@@ -95,7 +95,7 @@ function renderDebugPanel() {
     JSON.stringify(playInput, null, 2) +
   
     "\n\n========================================\n\n" +  
-    "FACTS\n\n" +
+    "FACTTTTTTS\n\n" +
     JSON.stringify(facts, null, 2);
   
   logs.textContent = teksts;
