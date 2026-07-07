@@ -121,7 +121,7 @@ function playExecuteButtonClick() {
        return result;
     }
       
-    // te notiek darbs NEPABEIGTS DARBS !!!!!!!!
+    // -----
     const player = playInput.player;
     const suit = playInput.suit;
     const rank = playInput.rank;
@@ -173,8 +173,9 @@ function playExecuteButtonClick() {
         result.refresh = false;
         return result;
     }
-}
-  // te vēlāk būs bridža noteikumi:
+   }
+  
+    // te vēlāk būs bridža noteikumi:
     // - ja position == 1, drīkst jebkuru kārti no rokas
     // - ja position > 1, jāpārbauda prasītais masts
     console.log("UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU");
