@@ -77,7 +77,7 @@ function renderProtocolPanel() {
 // ============================================================
 function renderDebugPanel() {
    console.log("common/renderDebugPanel 07-jul sākas");
-   const logs = document.getElementById("logs");
+   const logs = document.getElementById("logPanel");
   
    logs.textContent =
   //  "GAME STATE\n\n" +
