@@ -148,7 +148,32 @@ function playExecuteButtonClick() {
       result.refresh = false;
       return result;
  }
- 
+ // ----------------------------------------------------
+ // Ja spēlētājs nav pirmais stiķī,
+ // pārbauda, vai jāseko prasītajam mastam.
+ // ----------------------------------------------------
+ if (position != 1) {
+    const requiredSuit = gameState.play.requiredSuit;
+
+    if (requiredSuit == null) {
+        result.ok = false;
+        result.message = "Kļūda: nav zināms prasītais masts.";
+        result.refresh = false;
+        return result;
+    }
+
+    const hasRequiredSuit = facts.hands[player].some(cardInHand =>
+        cardInHand[0] === requiredSuit &&
+        !facts.plays.some(play => play.card === cardInHand)
+    );
+
+    if (hasRequiredSuit && suit !== requiredSuit) {
+        result.ok = false;
+        result.message = "Neder. Jāspēlē prasītais masts: " + requiredSuit;
+        result.refresh = false;
+        return result;
+    }
+}
   // te vēlāk būs bridža noteikumi:
     // - ja position == 1, drīkst jebkuru kārti no rokas
     // - ja position > 1, jāpārbauda prasītais masts
