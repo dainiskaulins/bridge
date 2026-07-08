@@ -35,7 +35,7 @@ let gameState = {
     //-----------------------------------------------------
     // Solīšanas process
     //-----------------------------------------------------
-    bidding {
+    bidding: {
        finished: false,
        declarer: null,
        dummy: null,
@@ -61,7 +61,7 @@ let gameState = {
     //-----------------------------------------------------
     // Solīšanas rezultāts: kontrakts
     //-----------------------------------------------------
-    contract {
+    contract: {
        level: null,
        trump: null,
        doubled: false,
@@ -111,9 +111,14 @@ function calculateGameState() {
 
     // nākošais spēlētājs
     const lastPlay = facts.plays[facts.plays.length - 1];
+    if (lastPlay) {
+        gameState.play.currentPlayer = nextSeat(lastPlay.player);
+    } else {
+        gameState.play.currentPlayer = null;
+    }
+    
     console.log("sssssssssss lastPlay : " + lastPlay );
-    gameState.play.currentPlayer = nextSeat(lastPlay);
-        
+         
     // te būs citi lauki arī
     
     //-----------------------------------------------------
@@ -136,10 +141,7 @@ function calculateGameState() {
     gameState.contract.trump = biddingInfo.trump;
     gameState.contract.doubled = biddingInfo.doubled;
     gameState.contract.redoubled = biddingInfo.redoubled;
-
 }  
-
-}
 
 //=========================================================
 // Aprēķina vienu gameState lauku: stiķa numuru.
