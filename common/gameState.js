@@ -35,7 +35,7 @@ let gameState = {
     //-----------------------------------------------------
     // Solīšanas process
     //-----------------------------------------------------
-    bidding = {
+    bidding {
        finished: false,
        declarer: null,
        dummy: null,
@@ -61,7 +61,7 @@ let gameState = {
     //-----------------------------------------------------
     // Solīšanas rezultāts: kontrakts
     //-----------------------------------------------------
-    contract = {
+    contract {
        level: null,
        trump: null,
        doubled: false,
