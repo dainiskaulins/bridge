@@ -267,18 +267,43 @@ function analyzeBidding(calls) {
     };
 
     // Deklarants: pirmais no uzvarējušās puses, kas solīja kontrakta mastu
-    const winningSide = sideOf(lastBid.player);
+    // PILNĪGI APLAMS ALGOTITMS.
+    // jāatrod pēdējais kas nav PASS, X, XX PA VISIEM SOLĪJUMIEM
+    let lastBid = null;
 
     for (const c of calls) {
         if (
-            c.callType === "BID" &&
-            c.suit === result.trump &&
-            sideOf(c.player) === winningSide
+            c.solijums !== "PASS" &&
+            c.solijums !== "X" &&
+            c.solijums !== "XX"
         ) {
-            result.declarer = c.player;
-            break;
+            lastBid = c;
         }
     }
+
+if (!lastBid) {
+    return result;
+}
+
+result.level = Number(lastBid.solijums[0]);
+result.trump = lastBid.solijums.slice(1);
+
+const winningSide = sideOf(lastBid.player);
+
+for (const c of calls) {
+    if (
+        c.solijums !== "PASS" &&
+        c.solijums !== "X" &&
+        c.solijums !== "XX" &&
+        c.solijums.slice(1) === result.trump &&
+        sideOf(c.player) === winningSide
+    ) {
+        result.declarer = c.player;
+        break;
+    }
+}
+
+    result.dummy = partnerOf(result.declarer);
 
     result.dummy = partnerOf(result.declarer);
 
