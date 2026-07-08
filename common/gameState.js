@@ -115,9 +115,10 @@ function calculateGameState() {
     // "C","D","H","S", vai null, ja pirmais stiķī
     gameState.play.requiredSuit = gsCalculateRequiredSuit();
 
-    // nākošais spēlēt;ajs
+    // nākošais spēlētājs
     const lastPlay = facts.plays[facts.plays.length - 1];
-    gameState.play.currentPlayer = nextSeat(lastPlay.player);
+    console.log("sssssssssss lastPlay : " + lastPlay );
+    gameState.play.currentPlayer = nextSeat(lastPlay);
         
     // te būs citi lauki arī
 
