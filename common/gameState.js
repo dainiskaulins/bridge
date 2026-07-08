@@ -262,10 +262,10 @@ function analyzeBidding(calls) {
             lastBid = c;
         }
     }
-
-if (!lastBid) {
-    return result;
-}
+    console.log("KUKURUKU KŪ LASTbID" + lastBid);
+    if (!lastBid) {
+        return result;
+    }
 
 result.level = Number(lastBid.solijums[0]);
 result.trump = lastBid.solijums.slice(1);
