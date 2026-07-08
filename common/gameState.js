@@ -33,20 +33,16 @@
 let gameState = {
 
     //-----------------------------------------------------
-    // Solīšana
+    // Solīšanas process
     //-----------------------------------------------------
-    bidding: {
-
-        // finished: false,
-        // contract: null,
-        // declarer: null,
-        // dummy: null,
-
-        // lastCall: null,
-        // last3Calls: []
-
-    },
-
+    bidding = {
+       finished: false,
+       declarer: null,
+       dummy: null,
+       lastCall: null,
+       last3Calls: []
+    };
+       
     //-----------------------------------------------------
     // Izspēle
     //-----------------------------------------------------
@@ -63,16 +59,14 @@ let gameState = {
     },
 
     //-----------------------------------------------------
-    // Kontrakts
+    // Solīšanas rezultāts: Kontrakts
     //-----------------------------------------------------
-    contract: {
-
-        // level: null,
-        // trump: null,
-        // doubled: false,
-        // redoubled: false
-
-    },
+    gameState.contract = {
+       level: null,
+       trump: null,
+       doubled: false,
+       redoubled: false
+    };
 
     //-----------------------------------------------------
     // Stiķi
@@ -108,6 +102,7 @@ let gameState = {
 function calculateGameState() {
     console.log("common/calculateGameState sāk strādāt!");
     
+    // ---- PLAY -----
     // Izspēles stiķa numurs
     gameState.play.trick = gsCalculateCurrentTrick();
     // 1..4, kura kārts stiķī
@@ -121,6 +116,29 @@ function calculateGameState() {
     gameState.play.currentPlayer = nextSeat(lastPlay);
         
     // te būs citi lauki arī
+    
+    //-----------------------------------------------------
+    // Solīšana
+    //-----------------------------------------------------
+
+    const biddingInfo = analyzeBidding(facts.bids);
+
+    gameState.bidding.finished = biddingInfo.finished;
+    gameState.bidding.declarer = biddingInfo.declarer;
+    gameState.bidding.dummy = biddingInfo.dummy;
+    gameState.bidding.lastCall = biddingInfo.lastCall;
+    gameState.bidding.last3Calls = biddingInfo.last3Calls;
+
+    //-----------------------------------------------------
+    // Kontrakts
+    //-----------------------------------------------------
+
+    gameState.contract.level = biddingInfo.level;
+    gameState.contract.trump = biddingInfo.trump;
+    gameState.contract.doubled = biddingInfo.doubled;
+    gameState.contract.redoubled = biddingInfo.redoubled;
+
+}  
 
 }
 
@@ -179,6 +197,88 @@ function gsCalculateRequiredSuit() {
 
     return firstCard[0];
 
+}
+//=====================================
+function analyzeBidding(calls) {
+    const result = {
+        finished: false,
+        contract: null,
+        declarer: null,
+        dummy: null,
+        lastCall: null,
+        last3Calls: [],
+        level: null,
+        trump: null,
+        doubled: false,
+        redoubled: false
+    };
+
+    if (!calls || calls.length === 0) {
+        return result;
+    }
+
+    result.lastCall = calls[calls.length - 1];
+    result.last3Calls = calls.slice(-3);
+
+    // Solīšana beidzas, ja ir vismaz 4 saucieni un pēdējie 3 ir PASS
+    const last3Pass =
+        calls.length >= 4 &&
+        calls.slice(-3).every(c => c.callType === "PASS");
+
+    result.finished = last3Pass;
+
+    // Atrodam pēdējo īsto solījumu: 1C, 2H, 3NT utt.
+    let lastBid = null;
+
+    for (const c of calls) {
+        if (c.callType === "BID") {
+            lastBid = c;
+        }
+    }
+
+    // Ja visi nopasējuši bez kontrakta
+    if (!lastBid) {
+        result.contract = null;
+        return result;
+    }
+
+    result.level = lastBid.level;
+    result.trump = lastBid.suit;
+
+    // Pārbaudām, vai pēc pēdējā solījuma bija X vai XX
+    const afterLastBid = calls.slice(calls.indexOf(lastBid) + 1);
+
+    result.doubled = afterLastBid.some(c => c.callType === "DOUBLE");
+    result.redoubled = afterLastBid.some(c => c.callType === "REDOUBLE");
+
+    if (result.redoubled) {
+        result.doubled = false;
+    }
+
+    result.contract = {
+        level: result.level,
+        trump: result.trump,
+        doubled: result.doubled,
+        redoubled: result.redoubled
+    };
+
+    // Deklarants: pirmais no uzvarējušās puses, kas solīja kontrakta mastu
+    const winningSide = sideOf(lastBid.player);
+
+    for (const c of calls) {
+        if (
+            c.callType === "BID" &&
+            c.suit === result.trump &&
+            sideOf(c.player) === winningSide
+        ) {
+            result.declarer = c.player;
+            break;
+        }
+    }
+
+    result.dummy = partnerOf(result.declarer);
+
+    return result;
 }
 
 console.log("common/gameState.js ielādēts");
