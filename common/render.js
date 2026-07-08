@@ -84,17 +84,17 @@ function renderDebugPanel() {
     "GAME STATE\n\n" +
     JSON.stringify(gameState, null, 2) +
   
-    "\n\n========================================\n\n" +
+    "\n\n========================================\n" +
   
     "BIDDING INPUT\n\n" +
     JSON.stringify(biddingInput, null, 2) +
   
-    "\n\n========================================\n\n" +
+    "\n\n========================================\n" +
   
     "PLAY INPUT\n\n" +
     JSON.stringify(playInput, null, 2) +
   
-    "\n\n========================================\n\n" +  
+    "\n\n========================================\n" +  
     "FACTTTTTTS\n\n" +
     JSON.stringify(facts, null, 2);
   
