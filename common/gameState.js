@@ -231,16 +231,6 @@ function analyzeBidding(calls) {
 
     result.finished = last3Pass;
 
-    // Pārbaudām, vai pēc pēdējā solījuma bija X vai XX
-    const afterLastBid = calls.slice(calls.indexOf(lastBid) + 1);
-
-    result.doubled = afterLastBid.some(c => c.callType === "DOUBLE");
-    result.redoubled = afterLastBid.some(c => c.callType === "REDOUBLE");
-
-    if (result.redoubled) {
-        result.doubled = false;
-    }
-
     result.contract = {
         level: result.level,
         trump: result.trump,
@@ -266,22 +256,32 @@ function analyzeBidding(calls) {
     if (!lastBid) {
         return result;
     }
+    
+    // Pārbaudām, vai pēc pēdējā solījuma bija X vai XX
+    const afterLastBid = calls.slice(calls.indexOf(lastBid) + 1);
 
-result.level = Number(lastBid.solijums[0]);
-result.trump = lastBid.solijums.slice(1);
+    result.doubled = afterLastBid.some(c => c.callType === "DOUBLE");
+    result.redoubled = afterLastBid.some(c => c.callType === "REDOUBLE");
 
-const winningSide = sideOf(lastBid.player);
+    if (result.redoubled) {
+        result.doubled = false;
+    }
+    
+    result.level = Number(lastBid.solijums[0]);
+    result.trump = lastBid.solijums.slice(1);
 
-for (const c of calls) {
-    if (
-        c.solijums !== "PASS" &&
-        c.solijums !== "X" &&
-        c.solijums !== "XX" &&
-        c.solijums.slice(1) === result.trump &&
-        sideOf(c.player) === winningSide
-    ) {
-        result.declarer = c.player;
-        break;
+    const winningSide = sideOf(lastBid.player);
+
+    for (const c of calls) {
+       if (
+          c.solijums !== "PASS" &&
+          c.solijums !== "X" &&
+          c.solijums !== "XX" &&
+          c.solijums.slice(1) === result.trump &&
+          sideOf(c.player) === winningSide
+      ) {
+          result.declarer = c.player;
+          break;
     }
 }
 
