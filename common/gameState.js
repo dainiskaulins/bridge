@@ -41,7 +41,7 @@ let gameState = {
        dummy: null,
        lastCall: null,
        last3Calls: []
-    };
+    },
        
     //-----------------------------------------------------
     // Izspēle
@@ -66,7 +66,7 @@ let gameState = {
        trump: null,
        doubled: false,
        redoubled: false
-    };
+    },
 
     //-----------------------------------------------------
     // Stiķi
