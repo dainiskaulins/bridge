@@ -231,24 +231,6 @@ function analyzeBidding(calls) {
 
     result.finished = last3Pass;
 
-    // Atrodam pēdējo īsto solījumu: 1C, 2H, 3NT utt.
-    let lastBid = null;
-
-    for (const c of calls) {
-        if (c.callType === "BID") {
-            lastBid = c;
-        }
-    }
-
-    // Ja visi nopasējuši bez kontrakta
-    if (!lastBid) {
-        result.contract = null;
-        return result;
-    }
-
-    result.level = lastBid.level;
-    result.trump = lastBid.suit;
-
     // Pārbaudām, vai pēc pēdējā solījuma bija X vai XX
     const afterLastBid = calls.slice(calls.indexOf(lastBid) + 1);
 
@@ -304,9 +286,6 @@ for (const c of calls) {
 }
 
     result.dummy = partnerOf(result.declarer);
-
-    result.dummy = partnerOf(result.declarer);
-
     return result;
 }
 
