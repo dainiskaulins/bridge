@@ -90,7 +90,6 @@ let gameState = {
 
 };
 
-
 //=========================================================
 // Pārrēķina visu gameState no FACTS.
 //
