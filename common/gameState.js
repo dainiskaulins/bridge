@@ -126,7 +126,10 @@ function calculateGameState() {
     //-----------------------------------------------------
 
     const biddingInfo = analyzeBidding(facts.bids);
+    //???????????????????????
+    console.log("biddingInfo : " + biddingInfo );  
 
+    
     gameState.bidding.finished = biddingInfo.finished;
     gameState.bidding.declarer = biddingInfo.declarer;
     gameState.bidding.dummy = biddingInfo.dummy;
