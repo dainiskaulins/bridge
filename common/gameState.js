@@ -44,7 +44,7 @@ let gameState = {
     },
        
     //-----------------------------------------------------
-    // Izspēle
+    // Izspēles stāvoklis
     //-----------------------------------------------------
     play: {
 
@@ -59,9 +59,9 @@ let gameState = {
     },
 
     //-----------------------------------------------------
-    // Solīšanas rezultāts: Kontrakts
+    // Solīšanas rezultāts: kontrakts
     //-----------------------------------------------------
-    gameState.contract = {
+    contract = {
        level: null,
        trump: null,
        doubled: false,
