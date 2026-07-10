@@ -128,7 +128,6 @@ function calculateGameState() {
     const biddingInfo = analyzeBidding(facts.bids);
     //???????????????????????
     console.log("biddingInfo : " + biddingInfo );  
-
     
     gameState.bidding.finished = biddingInfo.finished;
     gameState.bidding.declarer = biddingInfo.declarer;
@@ -169,9 +168,8 @@ function gsCalculateCurrentTrickPosition() {
 // "S", "W", "N", "E"
 //=========================================================
 function gsCalculateCurrentPlayer() {
-
+// nepabeigts   ttdddddddddddddddddddddddddddddddddddddddddddd
     return "N";
-
 }
 //=========================================================
 function nextSeat(player) {
@@ -224,13 +222,18 @@ function analyzeBidding(calls) {
     result.lastCall = calls[calls.length - 1];
     result.last3Calls = calls.slice(-3);
 
-    // Solīšana beidzas, ja ir vismaz 4 saucieni un pēdējie 3 ir PASS
-    const last3Pass =
-        calls.length >= 4 &&
-        calls.slice(-3).every(c => c.callType === "PASS");
+    // Solīšana beidzas, ja ir vismaz 4 solījumi un pēdējie 3 ir PASS
+    result.finished = false;
 
-    result.finished = last3Pass;
+    if (calls.length >= 4) {
+        const last3Pass =
+            calls.slice(-3).every(c => c.solijums === "PASS");
 
+        if (last3Pass) {
+            result.finished = true;
+        }
+    }
+    // ----- contract
     result.contract = {
         level: result.level,
         trump: result.trump,
@@ -294,7 +297,7 @@ function sideOf(player) {
     if (player === "E" || player === "W") return "EW";
     return null;
 }
-
+//------------------------
 function partnerOf(player) {
     if (player === "N") return "S";
     if (player === "S") return "N";
