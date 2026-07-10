@@ -284,8 +284,8 @@ function analyzeBidding(calls) {
       ) {
           result.declarer = c.player;
           break;
+      }
     }
-}
 
     result.dummy = partnerOf(result.declarer);
     return result;
