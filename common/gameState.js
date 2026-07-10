@@ -263,8 +263,8 @@ function analyzeBidding(calls) {
     // Pārbaudām, vai pēc pēdējā solījuma bija X vai XX
     const afterLastBid = calls.slice(calls.indexOf(lastBid) + 1);
 
-    result.doubled = afterLastBid.some(c => c.callType === "DOUBLE");
-    result.redoubled = afterLastBid.some(c => c.callType === "REDOUBLE");
+    result.doubled = afterLastBid.some(c => c.callType === "X");
+    result.redoubled = afterLastBid.some(c => c.callType === "XX");
 
     if (result.redoubled) {
         result.doubled = false;
