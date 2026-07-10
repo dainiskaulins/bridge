@@ -160,10 +160,9 @@ function gsCalculateCurrentTrick() {
 // Rezultāts: 1, 2, 3 vai 4.
 //=========================================================
 function gsCalculateCurrentTrickPosition() {
-
     return (facts.plays.length % 4) + 1;
-
 }
+
 //=========================================================
 // "S", "W", "N", "E"
 //=========================================================
@@ -262,7 +261,7 @@ function analyzeBidding(calls) {
     
     // Pārbaudām, vai pēc pēdējā solījuma bija X vai XX
     const afterLastBid = calls.slice(calls.indexOf(lastBid) + 1);
-
+    console.log("KUKURUKU KŪ LASTbID afterLastBid :" + afterLastBid);
     result.doubled = afterLastBid.some(c => c.callType === "X");
     result.redoubled = afterLastBid.some(c => c.callType === "XX");
 
