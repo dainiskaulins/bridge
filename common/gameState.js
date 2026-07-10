@@ -288,5 +288,19 @@ function analyzeBidding(calls) {
     result.dummy = partnerOf(result.declarer);
     return result;
 }
+//----------------------------------------
+function sideOf(player) {
+    if (player === "N" || player === "S") return "NS";
+    if (player === "E" || player === "W") return "EW";
+    return null;
+}
+
+function partnerOf(player) {
+    if (player === "N") return "S";
+    if (player === "S") return "N";
+    if (player === "E") return "W";
+    if (player === "W") return "E";
+    return null;
+}
 
 console.log("common/gameState.js ielādēts");
