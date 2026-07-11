@@ -31,6 +31,8 @@ function tuksaIzdaleClick() {
   }
 
   tuksaIzdale();
+  // Saglabā sākotnējo izdalījumu.
+  facts.initialHands = structuredClone(facts.hands);
   rakstitProtokolu("Tukša izdale.");
   renderAll();
 }
@@ -95,6 +97,8 @@ function renderAll() {
 
 function jaunaSpele() {
     generetIzdali();
+    // Saglabā sākotnējo izdalījumu.
+    facts.initialHands = structuredClone(facts.hands);
     renderAll();
 }
 // ----- zīmē pogu variantus -----
