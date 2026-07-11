@@ -69,7 +69,7 @@ const facts = {
     // šis numurs jāpalielina.
     // ------------------------------------------------------------
 
-    version: "GALDS 0.0.3",
+    version: "GALDS 0.0.4",
 
     status: STATUS.EMPTY,
     viewMode: VIEW_MODE.OPEN,
@@ -112,19 +112,20 @@ const facts = {
     //   DT = kārava desmitnieks
     //   C7 = kreiča septītnieks
     // ------------------------------------------------------------
-
+    
     hands: {
-
         N: [],
-
         E: [],
-
         S: [],
-
         W: []
-
     },
-
+    
+    initialHands: {
+        N: [],
+        E: [],
+        S: [],
+        W: []
+    },
     // ------------------------------------------------------------
     // Dalītājs.
     //
